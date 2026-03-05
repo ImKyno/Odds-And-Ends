@@ -9,11 +9,11 @@ if WORLD_TILES.MESA_CRACKED ~= nil then
     return
 end
 
-local WALK_ROCK = "dontstarve/movement/walk_rock"
-local RUN_ROCK  = "dontstarve/movement/run_rock"
+local WALK_DIRT = "dontstarve/movement/walk_dirt"
+local RUN_DIRT  = "dontstarve/movement/run_dirt"
 
-local WALK_SAND = "dontstarve/movement/walk_sand"
-local RUN_SAND  = "dontstarve/movement/run_sand"
+local WALK_SAND = "turnoftides/movement/run_pebblebeach"
+local RUN_SAND  = "turnoftides/movement/run_pebblebeach"
 
 local RUN_SNOW  = "dontstarve/movement/run_snow"
 
@@ -27,8 +27,8 @@ AddTile("MESA_CRACKED", "LAND",
         name          = "cave",
         noise_texture = "levels/textures/mesa_cracked_noise.tex",
 
-        walksound     = WALK_ROCK,
-        runsound      = RUN_ROCK,
+        walksound     = WALK_DIRT,
+        runsound      = RUN_DIRT,
         snowsound     = RUN_SNOW,
 
         hard          = true,
@@ -57,8 +57,8 @@ AddTile("MESA_ROCKY", "LAND",
         name          = "cave",
         noise_texture = "levels/textures/mesa_rocky_noise.tex",
 
-        walksound     = WALK_ROCK,
-        runsound      = RUN_ROCK,
+        walksound     = WALK_DIRT,
+        runsound      = RUN_DIRT,
         snowsound     = RUN_SNOW,
 
         hard          = true,
@@ -82,7 +82,7 @@ AddTile("MESA_SAND_CREAM", "LAND",
         ground_name   = "Mesa Sand Cream",
     },
     {
-        name          = "sand",
+        name          = "cave",
         noise_texture = "levels/textures/mesa_sand_cream_noise.tex",
 
         walksound     = WALK_SAND,
@@ -138,7 +138,7 @@ AddTile("MESA_SAND_PEACH", "LAND",
         ground_name   = "Mesa Sand Peach",
     },
     {
-        name          = "sand",
+        name          = "cave",
         noise_texture = "levels/textures/mesa_sand_peach_noise.tex",
 
         walksound     = WALK_SAND,
@@ -188,6 +188,9 @@ AddTile("MESA_SAND_PINK", "LAND",
         pickupsound   = "grainy",
     }
 )
+
+-- Used to pick random turfs. Check worldtile_noise.lua for more details.
+AddTile("MESA_NOISE", "NOISE")
 
 ChangeTileRenderOrder(WORLD_TILES.DESERT_DIRT,      WORLD_TILES.MESA_CRACKED,     true)
 ChangeTileRenderOrder(WORLD_TILES.MESA_CRACKED,     WORLD_TILES.MESA_ROCKY,       true)

@@ -2,11 +2,13 @@ local _G          = GLOBAL
 local require     = _G.require
 local WORLD_TILES = _G.WORLD_TILES
 
+require("map/my_lockandkey")
+
 local INIT_WORLDGEN =
 {
-    "keys_locks",
     "static_layouts",
     "worldtile_defs",
+    "worldtile_noise",
 }
 
 local INIT_WORLDGEN_PREINIT =

@@ -1,11 +1,8 @@
-local _G = GLOBAL
+local _G   = GLOBAL
+local KEYS = _G.KEYS
 
 AddTaskPreInit("Oasis", function(data)
 	if data.keys_given ~= nil then
-		table.insert(data.keys_given, _G.KEYS.MESA)
-	end
-
-	if data.locks ~= nil then
-		table.insert(data.locks, _G.LOCKS.MESA)
+		table.insert(data.keys_given, KEYS.MESA)
 	end
 end)
