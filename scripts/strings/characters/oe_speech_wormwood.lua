@@ -1,0 +1,11 @@
+local WORMWOOD = STRINGS.CHARACTERS.WORMWOOD
+
+WORMWOOD.DESCRIBE.OE_MESA_CLAY = "Hard Earth"
+WORMWOOD.DESCRIBE.OE_MESA_ROCK_CLAY = "Hard Earth Lump"
+
+WORMWOOD.DESCRIBE.OE_MESA_CACTUS_SMALL =
+{
+    GENERIC = "Tiny Poke Friend",
+    PICKED = "Friend Resting?",
+    BURNING = "Friend Hurts!",
+}

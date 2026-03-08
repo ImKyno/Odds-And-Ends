@@ -1,0 +1,6 @@
+-- Blank template strings for Mod Characters. Replace 'TEMPLATE' with your character prefab.
+local TEMPLATE = STRINGS.CHARACTERS.TEMPLATE
+
+TEMPLATE.DESCRIBE.OE_MESA_CLAY = 
+TEMPLATE.DESCRIBE.OE_MESA_ROCK_CLAY = 
+TEMPLATE.DESCRIBE.OE_MESA_CACTUS_SMALL = 

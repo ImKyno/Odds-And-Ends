@@ -6,8 +6,9 @@ local STRINGS =
 {
     NAME = 
     {
-        "Project Everything",
-        pt  = "Project Everything",
+        "Odds and Ends",
+        zh  = "Odds and Ends" ,
+        pt  = "De Tudo um Pouco",
     },
 
     DESCRIPTION =
@@ -42,6 +43,37 @@ local STRINGS =
             zh  = "已启用",
             pt  = "Ativado",
         },
+
+        LANGUAGE =
+        {
+            NAME =
+            {
+                "Language",
+                zh  = "语言",
+                pt  = "Idioma",
+            },
+
+            HOVER =
+            {
+                "Choose the language for the mod.\nYou can submit your translation in our Discord.",
+                zh  = "选择Mod的语言。 \n您可以在我们的 Discord 中提交您的翻译。",
+                pt  = "Escolha o idioma do Mod.\nVocê pode enviar sua tradução em nosso Discord.",
+            },
+
+            HOVER_OPTIONS =
+            {
+                en  = "English",
+                zh  = "简体中文",
+                pt  = "Português",
+
+                DESCRIPTION =
+                {
+                    en  = "Default Localization",
+                    zht = "作者： 匿名作者",
+                    pt  = "Autor: Kyno",
+                },
+            },
+        },
     },
 }
 
@@ -58,10 +90,10 @@ dst_compatible               = true
 all_clients_require_mod      = true
 client_only_mod              = false
 
-server_filter_tags           = {"Entertainment", "Kyno", "Glooms"}
+server_filter_tags           = {"Odds and Ends", "OE", "Entertainment", "Kyno", "Glooms"}
 
-icon                         = "ModiconPE.tex"
-icon_atlas                   = "ModiconPE.xml"
+icon                         = "ModiconOE.tex"
+icon_atlas                   = "ModiconOE.xml"
 
 local NONE_LABEL             = ""
 local NONE_OPTIONS           = 
@@ -84,7 +116,28 @@ local TOGGLE_OPTIONS         =
     },
 }
 
+local LANGUAGE_LABEL         = ChooseTranslationTable(STRINGS.SETTINGS.LANGUAGE.NAME)
+local LANGUAGE_HOVER         = ChooseTranslationTable(STRINGS.SETTINGS.LANGUAGE.HOVER)
+local LANGUAGE_OPTIONS       =
+{
+    {
+        description          = STRINGS.SETTINGS.LANGUAGE.HOVER_OPTIONS.en,
+        hover                = STRINGS.SETTINGS.LANGUAGE.HOVER_OPTIONS.DESCRIPTION.en,
+        data                 = false
+    },
+    {
+        description          = STRINGS.SETTINGS.LANGUAGE.HOVER_OPTIONS.zh,
+        hover                = STRINGS.SETTINGS.LANGUAGE.HOVER_OPTIONS.DESCRIPTION.zh,
+        data                 = "zh"
+    },
+    {
+        description          = STRINGS.SETTINGS.LANGUAGE.HOVER_OPTIONS.pt,
+        hover                = STRINGS.SETTINGS.LANGUAGE.HOVER_OPTIONS.DESCRIPTION.pt,
+        data                 = "pt"
+    },
+}
+
 configuration_options        =
 {
-
+    { name                   = "LANGUAGE", label = LANGUAGE_LABEL, hover = LANGUAGE_HOVER, options = LANGUAGE_OPTIONS, default = false },
 }

@@ -2,30 +2,30 @@ local _G          = GLOBAL
 local require     = _G.require
 local WORLD_TILES = _G.WORLD_TILES
 
-require("map/my_lockandkey")
+require("map/oe_lockandkey")
 
 local INIT_WORLDGEN =
 {
-    "static_layouts",
-    "worldtile_defs",
-    "worldtile_noise",
+    "oe_static_layouts",
+    "oe_worldtile_defs",
+    "oe_worldtile_noise",
 }
 
 local INIT_WORLDGEN_PREINIT =
 {
-    "task",
-    "taskset",
-    "level",
+    "oe_task",
+    "oe_taskset",
+    "oe_level",
 }
 
 local INIT_WORLDGEN_MAP_TASKS =
 {
-    "forest_tasks",
+    "oe_forest_tasks",
 }
 
 local INIT_WORLDGEN_MAP_ROOMS =
 {
-    "mesa",
+    "oe_mesa",
 }
 
 for _, v in pairs(INIT_WORLDGEN) do
