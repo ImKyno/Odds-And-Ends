@@ -50,15 +50,8 @@ if OE_LANGUAGE then
 	end
 end
 
-local INIT_MAIN =
-{
-    "oe_assets",
-    "oe_prefabs",
-    "oe_tuning",
-}
+modimport("main/init_main")
+-- Not to be confused with the above, this is game env instead of mod env.
+require("oe_main") -- NEEDS TO BE LOADED AFTER STRINGS AND MAIN IMPORTS.
 
-for _, v in pairs(INIT_MAIN) do
-	modimport("main/"..v)
-end
-
-require("oe_main") -- NEEDS TO BE LOADED AFTER STRINGS.
+modimport("postinit/init_postinit")

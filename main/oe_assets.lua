@@ -5,22 +5,14 @@ local resolvefilepath = _G.resolvefilepath
 
 Assets =
 {
-    Asset("ANIM", "anim/oe_turfs.zip"),
-
-    Asset("IMAGE", "images/oe_minimapimages.tex"),
-    Asset("ATLAS", "images/oe_minimapimages.xml"),
-
     Asset("IMAGE", "images/oe_inventoryimages.tex"),
     Asset("ATLAS", "images/oe_inventoryimages.xml"),
     Asset("ATLAS_BUILD", "images/oe_inventoryimages.xml", 256),
 }
 
--- Minimap Icons.
-AddMinimapAtlas("images/oe_minimapimages.xml")
-
 local OE_ICONS =
 {
-    "oe_mesa_clay",
+    "oe_treasurebag_deerclops"
 }
 
 for k, v in pairs(OE_ICONS) do

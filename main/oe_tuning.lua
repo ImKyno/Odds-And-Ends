@@ -12,7 +12,21 @@ TUNING.OE_LANGUAGE_CODE = GetModConfigData("LANGUAGE") or "en"
 TUNING.OE_RESOURCES = .06
 TUNING.OE_FLOATER = { "med", nil, 0.65 }
 
-TUNING.OE_MESA_CACTUS_DAMAGE = 3
-TUNING.OE_MESA_CACTUS_SMALL_REGROW_TIME = TOTAL_DAY_TIME * 3
+-- These are registered in oe_treasurebags.lua
+TUNING.OE_TREASUREBAGSLOOT =
+{
+    deerclops =
+    {
+        guaranteed =
+        {
+            { prefab = "ice", min = 1, max = 10 },
+            { prefab = "krampus_sack" },
+        },
 
-TUNING.OE_MESA_ROCK_CLAY_WORKLEFT = 6
+        chance =
+        {
+            { prefab = "goldnugget", chance = 0.75, min = 1, max = 5 },
+            { prefab = "bluegem",    chance = 0.50, min = 1, max = 5 },
+        },
+    },
+}

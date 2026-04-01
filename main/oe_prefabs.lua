@@ -4,7 +4,5 @@ local require = _G.require
 
 PrefabFiles =
 {
-    "oe_mesa_cactus",
-    "oe_mesa_clay",
-    "oe_mesa_rocks",
+    "oe_treasurebags",
 }

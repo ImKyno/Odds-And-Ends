@@ -43,25 +43,6 @@ function ChooseWeightedRandom(choices)
     return last_choice
 end
 
-function IsMesaBiome(inst)
-    if inst ~= nil and inst:IsValid() and TheWorld.Map:IsVisualGroundAtPoint(inst.Transform:GetWorldPosition()) then
-        local node = TheWorld.Map:FindNodeAtPoint(inst.Transform:GetWorldPosition())
-        return node and node.tags and table.contains(node.tags, "MesaArea")
-    end
-	
-    return false
-end
-
--- Same as above but for TILES.
-function IsMesaBiomeAtPoint(x, y, z)
-    if TheWorld.Map:IsVisualGroundAtPoint(x, y, z) then
-        local node = TheWorld.Map:FindNodeAtPoint(x, y, z)
-        return node and node.tags and table.contains(node.tags, "MesaArea")
-    end
-	
-    return false
-end
-
 -- Helper function for combat component to force creatures to give up on player.
 function ForceCombatGiveUp(player)
     local x, y, z = player.Transform:GetWorldPosition()

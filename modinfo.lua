@@ -139,5 +139,5 @@ local LANGUAGE_OPTIONS       =
 
 configuration_options        =
 {
-    { name                   = "LANGUAGE", label = LANGUAGE_LABEL, hover = LANGUAGE_HOVER, options = LANGUAGE_OPTIONS, default = false },
+    -- { name                = "LANGUAGE", label = LANGUAGE_LABEL, hover = LANGUAGE_HOVER, options = LANGUAGE_OPTIONS, default = false },
 }

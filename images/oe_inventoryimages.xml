@@ -1,1 +1,6 @@
-<Atlas><Texture filename="oe_inventoryimages.tex" /><Elements><Element name="oe_mesa_clay.tex" u1="0.0078125" u2="0.9921875" v1="0.0078125" v2="0.9921875" /></Elements></Atlas>
+<Atlas>
+    <Texture filename="oe_inventoryimages.tex" />
+    <Elements>
+        <Element name="oe_treasurebag_deerclops.tex" u1="0.0078125" v1="0.0078125" u2="0.9921875" v2="0.9921875" />
+    </Elements>
+</Atlas>
