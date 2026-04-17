@@ -19,7 +19,7 @@ if TUNING.OE_DEBUG_MODE then
         local x, y, z = player.Transform:GetWorldPosition()
         local n = 12
         local sector = 2 * math.pi/n
-	
+
         for i = 1, n, 1 do
             local cookpot
 
@@ -28,26 +28,10 @@ if TUNING.OE_DEBUG_MODE then
             else
                 cookpot = SpawnPrefab("cookpot")
             end
-		
+
             if cookpot then
                 cookpot.Transform:SetPosition(x + 5 * math.cos(i * sector), y, z + 5 * math.sin(i * sector))
             end
-        end
-    end
-
-    -- Command for testing the Mesa Biome stuff.
-    function c_oemesabiome()
-        local player = ConsoleCommandPlayer()
-	
-        if player ~= nil then
-            c_select(player)
-
-            local mesa_rock = c_findnext("oe_mesa_rock_clay")
-
-            player.Physics:Teleport(mesa_rock.Transform:GetWorldPosition())
-            player.components.inventory:Equip(c_spawn("krampus_sack", nil, true))
-            
-            c_give("oe_mesa_clay", 40, true)
         end
     end
 end

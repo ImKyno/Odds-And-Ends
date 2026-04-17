@@ -2,9 +2,9 @@ local function ChooseTranslationTable(tbl)
     return tbl[locale] or tbl[1]
 end
 
-local STRINGS = 
+local STRINGS =
 {
-    NAME = 
+    NAME =
     {
         "Odds and Ends",
         zh  = "Odds and Ends" ,
@@ -28,7 +28,7 @@ local STRINGS =
 ]],
     },
 
-    SETTINGS = 
+    SETTINGS =
     {
         DISABLED =
         {
@@ -96,10 +96,10 @@ icon                         = "ModiconOE.tex"
 icon_atlas                   = "ModiconOE.xml"
 
 local NONE_LABEL             = ""
-local NONE_OPTIONS           = 
+local NONE_OPTIONS           =
 {
     {
-        description          = "", 
+        description          = "",
         data                 = false
     }
 }

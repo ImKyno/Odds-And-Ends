@@ -1,18 +1,18 @@
 --[[-------------------------------------------------------------------------------------------------------------------------------------------------
 
-	[ Some content of the Mod is affected by the Player's Luck ]
-	
-	[ Good Luck ]
-	-- TO DO: Good Luck modifiers.
+    [ Some content of the Mod is affected by the Player's Luck ]
 
-	[ Bad Luck ]
-	-- TO DO: Bad Luck modifiers.
+    [ Good Luck ]
+    -- TO DO: Good Luck modifiers.
 
-	[ Good Luck Items ]
-	-- TO DO: Good luck iems.
+    [ Bad Luck ]
+    -- TO DO: Bad Luck modifiers.
 
-	[ Bad Luck Items ]
-	-- TO DO: Bad luck items.
+    [ Good Luck Items ]
+    -- TO DO: Good luck iems.
+
+    [ Bad Luck Items ]
+    -- TO DO: Bad luck items.
 
 --]]-------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -26,7 +26,7 @@ end
 
 local function CommonChanceUnluckMultAndLuckHyperbolic(reciprocal, mult)
     mult = mult or 1
-	
+
     return function(inst, chance, luck)
         return luck < 0 and chance * (1 + math.abs(luck) * mult)
         or luck > 0 and chance * (reciprocal / (reciprocal + luck) + .5) * TWOTHIRDS
@@ -35,7 +35,7 @@ end
 
 local function CommonChanceLuckHyperbolic(mult_max, asymptote, subtract)
     subtract = subtract or 0
-	
+
     return function(inst, chance, luck)
         return luck > 0 and chance * (mult_max - asymptote / ( asymptote + (luck - subtract) ))
     end
@@ -43,7 +43,7 @@ end
 
 local function CommonChanceUnluckHyperbolicAndLuckMult(reciprocal, mult)
     mult = mult or 1
-	
+
     return function(inst, chance, luck)
         return luck < 0 and chance * (reciprocal / (reciprocal - luck) + .5) * TWOTHIRDS
         or luck > 0 and chance * (1 + math.abs(luck) * mult)
@@ -52,7 +52,7 @@ end
 
 local function CommonChanceUnluckHyperbolicAndLuckAdditive(reciprocal, mult)
     mult = mult or 1
-	
+
     return function(inst, chance, luck)
         return luck < 0 and chance * (reciprocal / (reciprocal - luck) + .5) * TWOTHIRDS
         or luck > 0 and chance + ( luck * mult )
@@ -61,7 +61,7 @@ end
 
 local function CommonChanceUnluckHyperbolicAndLuckHyperbolic(mult_max, asymptote, subtract, reciprocal)
     subtract = subtract or 0
-	
+
     return function(inst, chance, luck)
         return luck < 0 and chance * (mult_max - asymptote / ( asymptote + (luck - subtract) ))
         or luck > 0 and chance * (reciprocal / (reciprocal + luck) + .5) * TWOTHIRDS
