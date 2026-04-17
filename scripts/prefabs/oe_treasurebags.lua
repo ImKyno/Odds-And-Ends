@@ -1,4 +1,4 @@
-local TreasureBagsLoot = require("oe_treasurebagsloot")
+local TREASUREBAGS_UTIL = require("prefabs/oe_treasurebags_util")
 
 local function MakeTreasureBag(data)
     local assets =
@@ -10,22 +10,14 @@ local function MakeTreasureBag(data)
         Asset("ATLAS_BUILD", "images/oe_inventoryimages.xml", 256),
     }
 
-    local function OnUnwrapped(inst, pos, doer)
-        local inventoryitem = inst.components.inventoryitem
-        local owner = inventoryitem:GetGrandOwner() or inventoryitem.owner
-
-        if owner ~= nil and owner.components.inventory ~= nil then
-            owner.components.inventory:DropItem(inst)
+    local function OnUnwrapped(inst, doer)
+        if doer ~= nil and inst.components.treasurebag ~= nil then
+            inst.components.treasurebag:Open(doer)
         end
-
-        inst.components.inventoryitem.canbepickedup = false
-        inst.components.unwrappable.canbeunwrapped = false
 
         if doer ~= nil and doer.SoundEmitter ~= nil then
             doer.SoundEmitter:PlaySound("dontstarve/common/together/packaged")
         end
-
-        inst:Remove()
     end
 
     local function fn()
@@ -47,7 +39,7 @@ local function MakeTreasureBag(data)
 
         inst:AddTag("nosteal") -- Prevents creatures from stealing it.
         inst:AddTag("treasurebag")
-	
+
         if data.tags ~= nil then
             for i, v in pairs(data.tags) do
                 inst:AddTag(v)
@@ -65,14 +57,18 @@ local function MakeTreasureBag(data)
         inst:AddComponent("inspectable")
         inst.components.inspectable.nameoverride = "OE_TREASUREBAG" -- Generic quote for all of them, too lazy to do one by one.
 
+        inst:AddComponent("treasurebag")
+        inst.components.treasurebag:SetLootTable(data.loottable or data.name)
+
+        inst:AddComponent("stackable")
+        inst.components.stackable.maxsize = data.stacksize or TUNING.STACK_SIZE_LARGEITEM
+
         inst:AddComponent("unwrappable")
         inst.components.unwrappable:SetOnUnwrappedFn(OnUnwrapped)
 
-        AddTreasureBagLoot(inst, data.name)
-
         return inst
     end
-	
+
     return Prefab("oe_treasurebag_"..data.name, fn, assets)
 end
 

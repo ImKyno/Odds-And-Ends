@@ -29,25 +29,25 @@ local INIT_STRINGS_CHARACTERS =
 }
 
 for _, v in pairs(INIT_STRINGS) do
-	require("strings/"..v)
+    require("strings/"..v)
 end
 
 for _, v in pairs(INIT_STRINGS_CHARACTERS) do
-	require("strings/characters/"..v)
+    require("strings/characters/"..v)
 end
 
 local OE_LANGUAGE = GetModConfigData("LANGUAGE")
 
 if OE_LANGUAGE then
-	modimport("scripts/strings/localization_"..OE_LANGUAGE.."/oe_strings_loadingtips")
+    modimport("scripts/strings/localization_"..OE_LANGUAGE.."/oe_strings_loadingtips")
 
-	for _, v in pairs(INIT_STRINGS) do
-		require("strings/localization_"..OE_LANGUAGE.."/"..v)
-	end
-	
-	for _, v in pairs(INIT_STRINGS_CHARACTERS) do
-		require("strings/localization_"..OE_LANGUAGE.."/characters/"..v)
-	end
+    for _, v in pairs(INIT_STRINGS) do
+        require("strings/localization_"..OE_LANGUAGE.."/"..v)
+    end
+
+    for _, v in pairs(INIT_STRINGS_CHARACTERS) do
+        require("strings/localization_"..OE_LANGUAGE.."/characters/"..v)
+    end
 end
 
 modimport("main/init_main")
