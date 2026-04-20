@@ -33,6 +33,18 @@ local function GenerateLoot(def)
         end
     end
 
+    if def.oneof then
+        local choice = def.oneof[math.random(#def.oneof)]
+
+        if choice ~= nil then
+            if type(choice) == "string" then
+                AddLoot(items, choice, 1, 1)
+            else
+                AddLoot(items, choice.prefab, choice.min, choice.max)
+            end
+        end
+    end
+
     if def.chance then
         for _, entry in ipairs(def.chance) do
             local rolls = entry.rolls or 1

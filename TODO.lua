@@ -2,12 +2,18 @@
 --[[-----------------------------------------------------------------------------------------------------------------------------
 
     [ Misc ]
-    * Add Missing STRINGS for characters.
+    * Add Missing STRINGS for characters. - [DONE]
 
     [ Minimap Icons ]
     * Add Icons for Treasure Bags and Trinket Machine.
 
+    [ General ]
+    * Add True Ice - [DONE]
+        |
+        New type of material for repairing items.
+
     [ Treasure Bags ]
+    * Add Treasure Bags System - [DONE]
     * Add Treasure Bag for each Boss.
     * Add Custom Loot for each Treasure Bag.
     * Make Treasure Bags only appear for their owner. (Other players can't see them).
@@ -18,38 +24,42 @@
     * Not every item is included, some are guaranteed, others are chance based.
     * Deerclops: 
         |
-        * Chilled Tools (Pickaxe, Axe, Shovel): Perishable Tools like Ham Bat, 
-        can store them inside Ice Box to retain spoil time. Working with them makes them spoil by X%.
+        * Chilled Tools (Pickaxe, Axe, Shovel, Hoe): Perishable Tools like Ham Bat, 
+        does not spoil during Winter, spoils faster during other seasons, specially Summer.
+        Can be stored inside Ice Box to stop spoil time and decreases temperature when yield. - [DONE]
+
+        * Frozen Mallet (Tool/Weapon): Perishable Hammer that can also be used as a weapon
+        that slows targets and decreases their damage for a certain duration,
+        does not spoil during Winter, spoils faster during other seasons, specially Summer.
+        Can be stored inside Ice Box to stop spoil time and decreases the temperature when yield. - [DONE]
 
         * Chilled Stone: Infinite Thermal Stone that is always cold.
         Melts in summer if left on ground.
 
-        * Frozen Mallet (Tool): Perishable Hammer that can also be used as a weapon that deals slows targets.
-        Can be stored inside Ice Box to reain spoil time and decreases the temperature when yield.
-
-        * Frostbane (Weapon): Sword that can freeze targets and decreases the temperature when yield.
+        * Frostbane (Weapon): Sword that can instantly freeze targets, has cooldown between uses.
+        Deals more damage during the Winter and decreases the temperature when yield. - [DONE]
 
         * Trinkets: Snowman, Snowglobe, ...
 
     * Moose Goose
         |
-        * Stormcaller's Staff (Weapon): Can cast lightnings. Drains sanity when used.
+        * Stormcaller's Staff (Weapon): Casts lightnings at mouse cursor. Drains sanity when used.
 
         * Stormcaller's Cloak (Armor): Chance to stun targets when attacked.
         Has 100% Waterprofness and gives insulation against lighnting.
 
-        * Rain Totem: Summons rain. Drains sanity when used.
+        * Rain Totem: Summons rain. Drains sanity and is consumed when used.
 
         * Bottled Sparks (Weapon): Throwable weapon that deals electric damage and stuns targets.
 
-        * Goose Waders (Artifact): Increased movement speed when it's raining.
+        * Goose Waders (Artifact): Increased movement speed when it's raining or if wetness is high enough.
 
         * Trinkets: Rubber Duck, Cracked Egg, Bird Nest, Soggy Boot, ...
 
     * Bearger
         |
-        * Groundbreaker (Tool): Can cast Bearger's Groundpound AOE attack.
-        Has low damage and has cooldown between uses.
+        * Groundbreaker (Tool): Casts Bearger's Groundpound AOE attack.
+        Has low damage and cooldown between uses.
 
         * Hibernation Hat (Clothing): Reduces hunger rate and gives winter insulation.
 
@@ -110,12 +120,5 @@
 
     [ Sewing Machine ]
     * Structure that acts like a Sewing Kit with more uses and repairs 100% of the item.
-
---]]-----------------------------------------------------------------------------------------------------------------------------
-
---[[-----------------------------------------------------------------------------------------------------------------------------
-
-    [ Treasure Bag ]
-    * Added Treasure Bag loot system.
 
 --]]-----------------------------------------------------------------------------------------------------------------------------

@@ -3,6 +3,7 @@ local INIT_MAIN =
     "oe_assets",
     "oe_prefabs",
     "oe_tuning",
+    "oe_cooking",
     "oe_scrapbook",
 }
 
