@@ -15,8 +15,10 @@ local function MakeFrozenTool(data)
         Asset("ANIM", "anim/shovel.zip"),
         Asset("ANIM", "anim/swap_shovel.zip"),
 
-        Asset("ANIM", "anim/hammer.zip"),
-        Asset("ANIM", "anim/swap_hammer.zip"),
+        --Asset("ANIM", "anim/hammer.zip"),
+        --Asset("ANIM", "anim/swap_hammer.zip"),
+        Asset("ANIM", "anim/swap_oe_hammer.zip"),
+        Asset("ANIM", "anim/oe_hammer.zip"),
 
         Asset("IMAGE", "images/oe_inventoryimages.tex"),
         Asset("ATLAS", "images/oe_inventoryimages.xml"),
@@ -360,12 +362,12 @@ local tools =
     -- Frozen Mallet
     {
         name        = "hammer",
-        bank        = "hammer",
-        build       = "swap_hammer",
+        bank        = "oe_hammer",
+        build       = "swap_oe_hammer",
         tags        = { "hammer" },
         float       = { 0.7, 0.4, 0.7 },
         sym_num     = -13,
-        sym_build   = "swap_hammer",
+        sym_build   = "swap_oe_hammer",
         action      = ACTIONS.HAMMER,
         damage      = TUNING.OE_FROZEN_TOOL_HAMMER_DAMAGE,
         debuffable  = true,
