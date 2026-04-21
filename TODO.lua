@@ -52,7 +52,7 @@
 
         * Bottled Sparks (Weapon): Throwable weapon that deals electric damage and stuns targets.
 
-        * Goose Waders (Artifact): Increased movement speed when it's raining or if wetness is high enough.
+        * Goose Waders (Accessory): Increased movement speed when it's raining or if wetness is high enough. [DONE]
 
         * Trinkets: Rubber Duck, Cracked Egg, Bird Nest, Soggy Boot, ...
 
@@ -65,7 +65,8 @@
 
         * Thick Fur Bedroll: Better than bunnyman's bedroll. Sleep at any time of the day.
 
-        * Gnawed Totem (Artifact): Drops more logs when chopping trees.
+        * Gnawed Wood Totem (Accessory): Drops more logs when chopping trees and killing treeguards.
+        Does not work for trees that can't drop logs or driftwood.
 
         * Trinkets: Teddy Bear, Picnic Basket, Chewed Log, Honey Jar, ...
 
@@ -80,37 +81,37 @@
         * Magma Stone: Infinite Thermal Stone that is always hot.
         Freezes in winter if left on ground.
 
-        * Ashen Ring (Artifact): Damage and ignites targets when attacked, has cooldown.
+        * Ashen Ring (Accessory): Damage and ignites targets when attacked, has cooldown.
         Drains sanity when activated.
 
-        * Scorched Skull (Artifact): Grants immunity to fire damage.
+        * Scorched Skull (Accessory): Grants immunity to fire damage.
 
         Enraged Loot:
             |
-            * Magma Charm (Artifact): Grants immunity to overheat.
+            * Magma Charm (Accessory): Grants immunity to overheat.
 
         * Trinkets: Mosquito Spray, Mini Volcano, Lava Lamp, Burnt Toast, ...
 
-    [ Artifacts ]
-    * Make Artifact System
+    [ Accessories ]
+    * Make Accessory System
         |
-        A new inventory slot that players can equip artifacts and gain bonuses.
+        A new inventory slot that players can equip accessories and gain bonuses. [DONE]
 
-    * Artifact Slot is limited to 1 equip at a time, but players can combine artifacts into new ones using a station.
+    * Accessory Slot is limited to 1 equip at a time, but players can combine accessories into new ones using a station.
         |
-        Combining artifacts keeps both of their bonuses into a single one with new bonuses.
+        Combining accessories keeps both of their bonuses into a single one with new bonuses.
 
-    * Wanna do an artifact in honor of Helicalpuma, something for Maxwell.
+    * Wanna do an accessory in honor of Helicalpuma, something for Maxwell.
         |
         Probably dropped by Shadow Pieces. "Helicalpuma's Might" Flair-like item.
 
     [ Tinkerer's Workbench ]
-    * Station used to combine 2 artifacts into a single one.
+    * Station used to combine 2 accessories into a single one.
         |
         Combining Scorched Skull (Fire Immunity) and Magma Charm (Overheat Immunity) 
         will result in the Molten Charm (Fire + Overheat Immunity) plus increased movement speed while on fire.
     
-    * When trying to combine artifacts, if the combination fails it will simply return the items back.
+    * When trying to combine accessories, if the combination fails it will simply return the items back.
 
     [ Trinket Machine ]
     * Add Recipe (costs nothing).

@@ -1,4 +1,4 @@
-local TREASUREBAGS_UTIL = require("prefabs/oe_treasurebags_util")
+local TREASUREBAGS_UTIL = require("oe_treasurebags_util")
 
 local function MakeTreasureBag(data)
     local assets =

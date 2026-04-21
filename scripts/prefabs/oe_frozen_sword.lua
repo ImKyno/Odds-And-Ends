@@ -52,10 +52,12 @@ local function OnUnequip(inst, owner)
 end
 
 local function OnAttack(inst, owner, target)
-    if target ~= nil and target.components.combat ~= nil and target.components.freezable ~= nil then
+    if target ~= nil and target:IsValid() and target.components.freezable ~= nil then
         if inst.components.rechargeable ~= nil then
             if inst.components.rechargeable:IsCharged() then
                 target.components.freezable:Freeze()
+                target.components.freezable:SpawnShatterFX()
+
                 inst.components.rechargeable:Discharge(inst._cooldown)
             end
         end
