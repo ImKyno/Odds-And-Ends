@@ -1,3 +1,5 @@
+local _G = GLOBAL
+
 local INIT_MAIN =
 {
     "oe_assets",
@@ -19,3 +21,6 @@ end
 for _, v in pairs(INIT_MAIN_MODS) do
     modimport("main/mods/"..v)
 end
+
+-- Accessories Equipslot.
+_G.EQUIPSLOTS.OE_ACCESSORY = "oe_accessory"

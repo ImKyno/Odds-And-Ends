@@ -12,6 +12,7 @@ TUNING.OE_LANGUAGE_CODE = GetModConfigData("LANGUAGE") or "en"
 
 TUNING.OE_RESOURCES = 0.06
 TUNING.OE_DEFAULT_FLOATER = { "med", nil, 0.65 }
+TUNING.OE_EQUIPSLOTS_RESCALE = 0.06
 
 TUNING.OE_DEBUFFS =
 {
@@ -21,6 +22,27 @@ TUNING.OE_DEBUFFS =
         SLOW = 0.7, -- 30%
         DAMAGE = 0.8, -- 20%
         DURATION = 20,
+    },
+}
+
+TUNING.OE_ACCESSORIES =
+{
+    BOOTS_MOOSE =
+    {
+        MOISTURE_THRESHOLD = 50,
+        SPEEDMULT = 1.25, -- Same as Walking Cane.
+    },
+
+    BURNT_SKULL =
+    {
+        MODIFIER = 1,
+    },
+
+    -- Unused.
+    WOOD_TOTEM =
+    {
+        LOG_AMOUNT = 6,
+        CHARCOAL_AMOUNT = 3,
     },
 }
 

@@ -10,4 +10,8 @@ PrefabFiles =
     "oe_frozen_sword",
     "oe_treasurebags",
     "oe_true_ice",
+
+    "oe_accessory_boots_moose",
+    "oe_accessory_burnt_skull",
+    "oe_accessory_wood_totem",
 }
