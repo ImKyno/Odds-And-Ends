@@ -31,17 +31,30 @@ AccessoriesUtil.WoodTotemBonusLog =
     palmconetree                = { 2, 3, 4 },
     oceantree                   = { 4, 6, 8 },
 
-    -- Treeguards
+    -- Treeguards.
     leif                        = { 3 },
     leif_sparse                 = { 3 },
 
-    -- Heap of Foods Mod Trees.
+    -- Mod Support.
+    -- Heap of Foods Mod.
+    kyno_bananatree             = { 2 },
     kyno_sugartree_short        = { 1 },
     kyno_sugartree_normal       = { 2 },
     kyno_sugartree              = { 3 },
     kyno_meadowisland_pikotree  = { 3 },
     kyno_meadowisland_tree      = { 1, 2, 3 },
     kyno_kokonuttree            = { 1, 2, 3 },
+
+    -- Island Adventures Mod.
+    palmtree                    = { 1, 2, 3 },
+    jungletree                  = { 1, 2, 3 },
+    mangrovetree                = { 1, 2, 3 },
+    livingjungletree_halloween  = { 1 },
+    livingjungletree            = { 2 },
+
+    -- Cherry Forest Mod.
+    treecherry                  = { 2, 3, 4 },
+    treecheerful                = { 2, 3, 4 },
 }
 
 return AccessoriesUtil

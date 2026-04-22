@@ -21,21 +21,11 @@ local function CaveBananaTreesPostInit(inst)
         if worker ~= nil and worker:HasTag("luckywoodcutter") then
             local log_bonus = AccessoriesUtil.WoodTotemBonusLog[inst.prefab]
 
-            if log_bonus ~= nil then
+            if log_bonus ~= nil and not inst:HasTag("burnt") then
                 local amount = log_bonus[1] or log_bonus or 0
 
                 for i = 1, amount do
                     inst.components.lootdropper:SpawnLootPrefab("log")
-                end
-            end
-
-            local charcoal_bonus = AccessoriesUtil.WoodTotemBonusCharcoal[inst.prefab]
-
-            if charcoal_bonus ~= nil then
-                local amount = charcoal_bonus[1] or charcoal_bonus or 0
-
-                for i = 1, amount do
-                    inst.components.lootdropper:SpawnLootPrefab("charcoal")
                 end
             end
         end
@@ -46,12 +36,4 @@ local function CaveBananaTreesPostInit(inst)
     end)
 end
 
-local CAVE_BANANA_TREES =
-{
-    "cave_banana_tree",
-    "cave_banana_burnt",
-}
-
-for k, v in pairs(CAVE_BANANA_TREES) do
-    AddPrefabPostInit(v, CaveBananaTreesPostInit)
-end
+AddPrefabPostInit("cave_banana_tree", CaveBananaTreesPostInit)

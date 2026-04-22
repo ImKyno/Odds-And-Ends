@@ -3,37 +3,37 @@ local require = _G.require
 
 local INIT_STRINGS =
 {
-    "oe_strings",
-    "oe_strings_scrapbook",
-}
-
-local INIT_STRINGS_CHARACTERS =
-{
-    "oe_speech_wilson",
-    "oe_speech_willow",
-    "oe_speech_wolfgang",
-    "oe_speech_wendy",
-    "oe_speech_wx78",
-    "oe_speech_wickerbottom",
-    "oe_speech_woodie",
-    "oe_speech_waxwell",
-    "oe_speech_wathgrithr",
-    "oe_speech_webber",
-    "oe_speech_winona",
-    "oe_speech_wortox",
-    "oe_speech_wormwood",
-    "oe_speech_warly",
-    "oe_speech_wurt",
-    "oe_speech_walter",
-    "oe_speech_wanda",
+    "strings",
+    "strings_scrapbook",
 }
 
 for _, v in pairs(INIT_STRINGS) do
-    require("strings/"..v)
+    require("strings/oe_"..v)
 end
 
+local INIT_STRINGS_CHARACTERS =
+{
+    "wilson",
+    "willow",
+    "wolfgang",
+    "wendy",
+    "wx78",
+    "wickerbottom",
+    "woodie",
+    "waxwell",
+    "wathgrithr",
+    "webber",
+    "winona",
+    "wortox",
+    "wormwood",
+    "warly",
+    "wurt",
+    "walter",
+    "wanda",
+}
+
 for _, v in pairs(INIT_STRINGS_CHARACTERS) do
-    require("strings/characters/"..v)
+    require("strings/characters/oe_speech_"..v)
 end
 
 local OE_LANGUAGE = GetModConfigData("LANGUAGE")
@@ -42,11 +42,11 @@ if OE_LANGUAGE then
     modimport("scripts/strings/localization_"..OE_LANGUAGE.."/oe_strings_loadingtips")
 
     for _, v in pairs(INIT_STRINGS) do
-        require("strings/localization_"..OE_LANGUAGE.."/"..v)
+        require("strings/localization_"..OE_LANGUAGE.."/oe_"..v)
     end
 
     for _, v in pairs(INIT_STRINGS_CHARACTERS) do
-        require("strings/localization_"..OE_LANGUAGE.."/characters/"..v)
+        require("strings/localization_"..OE_LANGUAGE.."/characters/oe_speech_"..v)
     end
 end
 
