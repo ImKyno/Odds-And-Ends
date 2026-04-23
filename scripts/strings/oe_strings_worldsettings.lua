@@ -1,21 +1,20 @@
 --[[
     WARNING FOR LOCALIZATION:
-	
+
     * DON'T COPY THIS FILE TO YOUR LOCALIZATION FOLDER!
 
-    * This is separated from the other localization files 
-    because it needs to load for both client and server. 
-	
+    * This is separated from the other localization files
+    because it needs to load for both client and server.
+
     * For some fucking reason LOC can't be GLOBAL server-side
-    but it needs to be GLOBAL while client-side. I don't know 
+    but it needs to be GLOBAL while client-side. I don't know
     how to switch between them while initializating the world.
-	
+
     * If we load both strings and oe_worldsettings.lua from client
     we can't apply any changes to worldgen. And if we load both
     strings and oe_worldsettings.lua from server, we will crash.
 ]]--
 
--- Common Dependencies.
 local _G      = GLOBAL
 local require = _G.require
 local STRINGS = _G.STRINGS
@@ -54,7 +53,7 @@ local function OEChooseTranslationTable()
 
     -- Fallback to english if we don't have them.
     local ok2, fallback = _G.pcall(require, "strings/oe_strings_customizations")
-	
+
     if ok2 and fallback then
         return fallback
     end

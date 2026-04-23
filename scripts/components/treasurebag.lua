@@ -1,4 +1,4 @@
-local TREASUREBAGS_UTIL = require("prefabs/oe_treasurebags_util")
+local TREASUREBAGS_UTIL = require("oe_treasurebags_util")
 
 local TreasureBag = Class(function(self, inst)
     self.inst = inst
@@ -29,6 +29,18 @@ local function GenerateLoot(def)
                 AddLoot(items, entry, 1, 1)
             else
                 AddLoot(items, entry.prefab, entry.min, entry.max)
+            end
+        end
+    end
+
+    if def.oneof then
+        local choice = def.oneof[math.random(#def.oneof)]
+
+        if choice ~= nil then
+            if type(choice) == "string" then
+                AddLoot(items, choice, 1, 1)
+            else
+                AddLoot(items, choice.prefab, choice.min, choice.max)
             end
         end
     end

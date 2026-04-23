@@ -1,4 +1,4 @@
-local TREASUREBAGS_UTIL = require("prefabs/oe_treasurebags_util")
+local TREASUREBAGS_UTIL = require("oe_treasurebags_util")
 
 local function MakeTreasureBag(data)
     local assets =
@@ -10,13 +10,13 @@ local function MakeTreasureBag(data)
         Asset("ATLAS_BUILD", "images/oe_inventoryimages.xml", 256),
     }
 
-    local function OnUnwrapped(inst, doer)
-        if doer ~= nil and inst.components.treasurebag ~= nil then
-            inst.components.treasurebag:Open(doer)
-        end
-
-        if doer ~= nil and doer.SoundEmitter ~= nil then
+    local function OnUnwrapped(inst, pos, doer)
+        if doer ~= nil then
             doer.SoundEmitter:PlaySound("dontstarve/common/together/packaged")
+
+            if inst.components.treasurebag ~= nil then
+                inst.components.treasurebag:Open(doer)
+            end
         end
     end
 
@@ -72,16 +72,26 @@ local function MakeTreasureBag(data)
     return Prefab("oe_treasurebag_"..data.name, fn, assets)
 end
 
-local treasurebags =
+local giants =
 {
-    {
-        name = "deerclops",
-    },
+    "deerclops",
+    -- "moose",
+    -- "dragonfly",
+    -- "bearger",
 }
+
+local treasurebags = {}
+
+for _, v in ipairs(giants) do
+    table.insert(treasurebags,
+    {
+        name = v,
+    })
+end
 
 local prefabs = {}
 
-for i, v in ipairs(treasurebags) do
+for _, v in ipairs(treasurebags) do
     table.insert(prefabs, MakeTreasureBag(v))
 end
 

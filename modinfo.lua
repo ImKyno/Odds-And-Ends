@@ -78,7 +78,7 @@ local STRINGS =
 }
 
 name                         = ChooseTranslationTable(STRINGS.NAME)
-version                      = "0.0-A (Alpha)"
+version                      = "1.0-A (Alpha)"
 
 description                  = ChooseTranslationTable(STRINGS.DESCRIPTION)
 

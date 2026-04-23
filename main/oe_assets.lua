@@ -4,6 +4,9 @@ local resolvefilepath = _G.resolvefilepath
 
 Assets =
 {
+    Asset("IMAGE", "images/oe_hud.tex"),
+    Asset("ATLAS", "images/oe_hud.xml"),
+
     Asset("IMAGE", "images/oe_inventoryimages.tex"),
     Asset("ATLAS", "images/oe_inventoryimages.xml"),
     Asset("ATLAS_BUILD", "images/oe_inventoryimages.xml", 256),

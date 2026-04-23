@@ -2,12 +2,18 @@
 --[[-----------------------------------------------------------------------------------------------------------------------------
 
     [ Misc ]
-    * Add Missing STRINGS for characters.
+    * Add Missing STRINGS for characters. - [DONE]
 
     [ Minimap Icons ]
     * Add Icons for Treasure Bags and Trinket Machine.
 
+    [ General ]
+    * Add True Ice - [DONE]
+        |
+        New type of material for repairing items.
+
     [ Treasure Bags ]
+    * Add Treasure Bags System - [DONE]
     * Add Treasure Bag for each Boss.
     * Add Custom Loot for each Treasure Bag.
     * Make Treasure Bags only appear for their owner. (Other players can't see them).
@@ -18,44 +24,49 @@
     * Not every item is included, some are guaranteed, others are chance based.
     * Deerclops: 
         |
-        * Chilled Tools (Pickaxe, Axe, Shovel): Perishable Tools like Ham Bat, 
-        can store them inside Ice Box to retain spoil time. Working with them makes them spoil by X%.
+        * Chilled Tools (Pickaxe, Axe, Shovel, Hoe): Perishable Tools like Ham Bat, 
+        does not spoil during Winter, spoils faster during other seasons, specially Summer.
+        Can be stored inside Ice Box to stop spoil time and decreases temperature when yield. - [DONE]
+
+        * Frozen Mallet (Tool/Weapon): Perishable Hammer that can also be used as a weapon
+        that slows targets and decreases their damage for a certain duration,
+        does not spoil during Winter, spoils faster during other seasons, specially Summer.
+        Can be stored inside Ice Box to stop spoil time and decreases the temperature when yield. - [DONE]
 
         * Chilled Stone: Infinite Thermal Stone that is always cold.
         Melts in summer if left on ground.
 
-        * Frozen Mallet (Tool): Perishable Hammer that can also be used as a weapon that deals slows targets.
-        Can be stored inside Ice Box to reain spoil time and decreases the temperature when yield.
-
-        * Frostbane (Weapon): Sword that can freeze targets and decreases the temperature when yield.
+        * Frostbane (Weapon): Sword that can instantly freeze targets, has cooldown between uses.
+        Deals more damage during the Winter and decreases the temperature when yield. - [DONE]
 
         * Trinkets: Snowman, Snowglobe, ...
 
     * Moose Goose
         |
-        * Stormcaller's Staff (Weapon): Can cast lightnings. Drains sanity when used.
+        * Stormcaller's Staff (Weapon): Casts lightnings at mouse cursor. Drains sanity when used.
 
         * Stormcaller's Cloak (Armor): Chance to stun targets when attacked.
         Has 100% Waterprofness and gives insulation against lighnting.
 
-        * Rain Totem: Summons rain. Drains sanity when used.
+        * Rain Totem: Summons rain. Drains sanity and is consumed when used.
 
         * Bottled Sparks (Weapon): Throwable weapon that deals electric damage and stuns targets.
 
-        * Goose Waders (Artifact): Increased movement speed when it's raining.
+        * Goose Waders (Accessory): Increased movement speed when it's raining or if wetness is high enough. [DONE]
 
         * Trinkets: Rubber Duck, Cracked Egg, Bird Nest, Soggy Boot, ...
 
     * Bearger
         |
-        * Groundbreaker (Tool): Can cast Bearger's Groundpound AOE attack.
-        Has low damage and has cooldown between uses.
+        * Groundbreaker (Tool): Casts Bearger's Groundpound AOE attack.
+        Has low damage and cooldown between uses.
 
         * Hibernation Hat (Clothing): Reduces hunger rate and gives winter insulation.
 
         * Thick Fur Bedroll: Better than bunnyman's bedroll. Sleep at any time of the day.
 
-        * Gnawed Totem (Artifact): Drops more logs when chopping trees.
+        * Gnawed Wood Totem (Accessory): Drops more logs when chopping trees and killing treeguards.
+        Does not work for trees that can't drop logs or driftwood.
 
         * Trinkets: Teddy Bear, Picnic Basket, Chewed Log, Honey Jar, ...
 
@@ -70,37 +81,37 @@
         * Magma Stone: Infinite Thermal Stone that is always hot.
         Freezes in winter if left on ground.
 
-        * Ashen Ring (Artifact): Damage and ignites targets when attacked, has cooldown.
+        * Ashen Ring (Accessory): Damage and ignites targets when attacked, has cooldown.
         Drains sanity when activated.
 
-        * Scorched Skull (Artifact): Grants immunity to fire damage.
+        * Scorched Skull (Accessory): Grants immunity to fire damage.
 
         Enraged Loot:
             |
-            * Magma Charm (Artifact): Grants immunity to overheat.
+            * Magma Charm (Accessory): Grants immunity to overheat.
 
         * Trinkets: Mosquito Spray, Mini Volcano, Lava Lamp, Burnt Toast, ...
 
-    [ Artifacts ]
-    * Make Artifact System
+    [ Accessories ]
+    * Make Accessory System
         |
-        A new inventory slot that players can equip artifacts and gain bonuses.
+        A new inventory slot that players can equip accessories and gain bonuses. [DONE]
 
-    * Artifact Slot is limited to 1 equip at a time, but players can combine artifacts into new ones using a station.
+    * Accessory Slot is limited to 1 equip at a time, but players can combine accessories into new ones using a station.
         |
-        Combining artifacts keeps both of their bonuses into a single one with new bonuses.
+        Combining accessories keeps both of their bonuses into a single one with new bonuses.
 
-    * Wanna do an artifact in honor of Helicalpuma, something for Maxwell.
+    * Wanna do an accessory in honor of Helicalpuma, something for Maxwell.
         |
         Probably dropped by Shadow Pieces. "Helicalpuma's Might" Flair-like item.
 
     [ Tinkerer's Workbench ]
-    * Station used to combine 2 artifacts into a single one.
+    * Station used to combine 2 accessories into a single one.
         |
         Combining Scorched Skull (Fire Immunity) and Magma Charm (Overheat Immunity) 
         will result in the Molten Charm (Fire + Overheat Immunity) plus increased movement speed while on fire.
     
-    * When trying to combine artifacts, if the combination fails it will simply return the items back.
+    * When trying to combine accessories, if the combination fails it will simply return the items back.
 
     [ Trinket Machine ]
     * Add Recipe (costs nothing).
@@ -110,12 +121,5 @@
 
     [ Sewing Machine ]
     * Structure that acts like a Sewing Kit with more uses and repairs 100% of the item.
-
---]]-----------------------------------------------------------------------------------------------------------------------------
-
---[[-----------------------------------------------------------------------------------------------------------------------------
-
-    [ Treasure Bag ]
-    * Added Treasure Bag loot system.
 
 --]]-----------------------------------------------------------------------------------------------------------------------------
