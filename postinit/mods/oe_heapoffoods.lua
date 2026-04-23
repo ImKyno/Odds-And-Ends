@@ -24,7 +24,15 @@ if TUNING.OE_HEAP_OF_FOODS_ENABLED then
                 local log_bonus = AccessoriesUtil.WoodTotemBonusLog[inst.prefab]
 
                 if log_bonus ~= nil and not inst:HasTag("burnt") then
-                    local amount = log_bonus[1] or log_bonus or 0
+                    local amount = 0
+
+                    if type(log_bonus) == "table" then
+                        local stage = inst.components.growable ~= nil and inst.components.growable.stage or 1
+                        amount = log_bonus[stage] or 0
+                    else
+                        amount = log_bonus or 0
+                    end
+
                     local driftwood = inst:HasTag("meadowislandtree")
 
                     for i = 1, amount do
@@ -41,15 +49,17 @@ if TUNING.OE_HEAP_OF_FOODS_ENABLED then
 
     local HOF_TREES =
     {
+        "kyno_bananatree",
+
         "kyno_sugartree_short",
         "kyno_sugartree_normal",
+        "kyno_sugartree_ruined2",
         "kyno_sugartree",
 
-        "kyno_meadowisland_pikotree",
         "kyno_meadowisland_tree",
+        "kyno_meadowisland_pikotree",
 
         "kyno_kokonuttree",
-        "kyno_bananatree",
     }
 
     for k, v in pairs(HOF_TREES) do

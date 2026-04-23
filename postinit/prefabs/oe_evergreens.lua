@@ -22,7 +22,14 @@ local function EvergreensPostInit(inst)
             local log_bonus = AccessoriesUtil.WoodTotemBonusLog[inst.prefab]
 
             if log_bonus ~= nil and not inst:HasTag("burnt") then
-                local amount = log_bonus[1] or log_bonus or 0
+                local amount = 0
+
+                if type(log_bonus) == "table" then
+                    local stage = inst.components.growable ~= nil and inst.components.growable.stage or 1
+                    amount = log_bonus[stage] or 0
+                else
+                    amount = log_bonus or 0
+                end
 
                 for i = 1, amount do
                     inst.components.lootdropper:SpawnLootPrefab("log")
