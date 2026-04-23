@@ -1,4 +1,4 @@
-local TreasureBagsUtil = {}
+local TreasureBagsUtil = {} -- Other mods can edit the tables below by importing this file.
 
 -- These are registered in prefabs/oe_treasurebags.lua
 TreasureBagsUtil.LootKey =

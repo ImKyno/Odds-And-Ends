@@ -15,8 +15,6 @@ local function MakeFrozenTool(data)
         Asset("ANIM", "anim/shovel.zip"),
         Asset("ANIM", "anim/swap_shovel.zip"),
 
-        --Asset("ANIM", "anim/hammer.zip"),
-        --Asset("ANIM", "anim/swap_hammer.zip"),
         Asset("ANIM", "anim/swap_oe_hammer.zip"),
         Asset("ANIM", "anim/oe_hammer.zip"),
 

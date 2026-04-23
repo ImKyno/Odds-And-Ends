@@ -2,6 +2,7 @@ local _G            = GLOBAL
 local require       = _G.require
 local SCRAPBOOKDATA = _G.deepcopy(require("screens/redux/scrapbookdata"))
 
+-- Shiy Loots Mod support for our rare items.
 for entry, data in pairs(SCRAPBOOKDATA) do
     data.deps = data.deps or {}
 
@@ -28,6 +29,5 @@ local function CreatureTest(loot, entity)
     return table.contains(deps, entity.prefab) and entity.replica.health ~= nil and entity.replica.health:IsDead()
 end
 
--- Shiy Loot Mod support for our rare items.
 TUNING.SHINY_LOOT_MOD_DEFS = TUNING.SHINY_LOOT_MOD_DEFS or {}
 TUNING.SHINY_LOOT_MOD_DEFS["oe_treasurebag_deerclops"] = CreatureTest

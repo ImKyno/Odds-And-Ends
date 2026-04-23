@@ -22,10 +22,22 @@ local function DeciduousTreesPostInit(inst)
             local log_bonus = AccessoriesUtil.WoodTotemBonusLog[inst.prefab]
 
             if log_bonus ~= nil and not inst:HasTag("burnt") then
-                local amount = inst.monster and log_bonus[2] or log_bonus[1] or log_bonus or 0
+                local amount = 0
+                local loot = inst.monster and "livinglog" or "log"
+
+                if type(log_bonus) == "table" then
+                    if inst.monster then
+                        amount = log_bonus[2] or 0
+                    else
+                        local stage = (inst.components.growable ~= nil and inst.components.growable.stage) or 1
+                        amount = log_bonus[stage] or 0
+                    end
+                else
+                    amount = log_bonus or 0
+                end
 
                 for i = 1, amount do
-                    inst.components.lootdropper:SpawnLootPrefab(inst.monster and "livinglog" or "log")
+                    inst.components.lootdropper:SpawnLootPrefab(loot)
                 end
             end
         end

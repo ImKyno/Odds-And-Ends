@@ -1,8 +1,8 @@
-local AccessoriesUtil = {}
+local AccessoriesUtil = {} -- Other mods can edit the tables below by importing this file.
 
 -- Wood Totem --
 -- Drop more logs and charcoal based on each tree type and its current stage.
--- NOTE: The accessory does not work for Stumps, Old Stage and Festive Tree Planter.
+-- NOTE: The accessory does not work for Stumps, Old Stages and Festive Tree Planters.
 AccessoriesUtil.WoodTotemBonusLog =
 {
     -- 1 Stage.
@@ -31,17 +31,31 @@ AccessoriesUtil.WoodTotemBonusLog =
     palmconetree                = { 2, 3, 4 },
     oceantree                   = { 4, 6, 8 },
 
-    -- Treeguards
+    -- Treeguards.
     leif                        = { 3 },
     leif_sparse                 = { 3 },
 
-    -- Heap of Foods Mod Trees.
+    -- Heap of Foods Mod.
+    kyno_bananatree             = { 2 },
     kyno_sugartree_short        = { 1 },
     kyno_sugartree_normal       = { 2 },
     kyno_sugartree              = { 3 },
+    kyno_sugartree_ruined2      = { 3 },
     kyno_meadowisland_pikotree  = { 3 },
     kyno_meadowisland_tree      = { 1, 2, 3 },
     kyno_kokonuttree            = { 1, 2, 3 },
+
+    -- Island Adventures Mod.
+    palmtree                    = { 1, 2, 3 },
+    jungletree                  = { 1, 2, 3 },
+    mangrovetree                = { 1, 2, 3 },
+    livingjungletree_halloween  = { 1 },
+    livingjungletree            = { 2 },
+    leif_palm                   = { 3 },
+
+    -- Cherry Forest Mod.
+    cherry_tree                 = { 2, 3, 4 },
+    cherry_tree_white           = { 2, 3, 4 },
 }
 
 return AccessoriesUtil
