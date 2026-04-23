@@ -360,12 +360,12 @@ local tools =
     -- Frozen Mallet
     {
         name        = "hammer",
-        bank        = "hammer",
-        build       = "swap_hammer",
+        bank        = "oe_hammer",
+        build       = "swap_oe_hammer",
         tags        = { "hammer" },
         float       = { 0.7, 0.4, 0.7 },
         sym_num     = -13,
-        sym_build   = "swap_hammer",
+        sym_build   = "swap_oe_hammer",
         action      = ACTIONS.HAMMER,
         damage      = TUNING.OE_FROZEN_TOOL_HAMMER_DAMAGE,
         debuffable  = true,
