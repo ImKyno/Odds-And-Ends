@@ -1,7 +1,7 @@
 local assets =
 {
-    Asset("ANIM", "anim/nightmaresword.zip"),
-    Asset("ANIM", "anim/swap_nightmaresword.zip"),
+    Asset("ANIM", "anim/oe_frozen_sword.zip"),
+    Asset("ANIM", "anim/oe_swap_frozen_sword.zip"),
 
     Asset("IMAGE", "images/oe_inventoryimages.tex"),
     Asset("ATLAS", "images/oe_inventoryimages.xml"),
@@ -20,9 +20,9 @@ local function OnEquip(inst, owner)
 
         if skin_build ~= nil then
             owner:PushEvent("equipskinneditem", inst:GetSkinName())
-            owner.AnimState:OverrideItemSkinSymbol("swap_object", skin_build, "swap_nightmaresword", inst.GUID, "swap_nightmaresword")
+            owner.AnimState:OverrideItemSkinSymbol("swap_object", skin_build, "oe_swap_frozen_sword", inst.GUID, "swap_spear")
         else
-            owner.AnimState:OverrideSymbol("swap_object", "swap_nightmaresword", "swap_nightmaresword")
+            owner.AnimState:OverrideSymbol("swap_object", "oe_swap_frozen_sword", "swap_spear")
         end
 
         owner.AnimState:Show("ARM_carry")
@@ -85,11 +85,11 @@ local function fn()
 
     MakeInventoryPhysics(inst)
 
-    local swap_data = { sym_build = "swap_nightmaresword", bank = "nightmaresword" }
+    local swap_data = { sym_build = "swap_spear", bank = "oe_frozen_sword" }
     MakeInventoryFloatable(inst, "med", 0.05, { 1.0, 0.4, 1.0 }, true, -17.5, swap_data)
 
-    inst.AnimState:SetBank("nightmaresword")
-    inst.AnimState:SetBuild("nightmaresword")
+    inst.AnimState:SetBank("oe_frozen_sword")
+    inst.AnimState:SetBuild("oe_frozen_sword")
     inst.AnimState:PlayAnimation("idle")
 
     inst:AddTag("sharp")
