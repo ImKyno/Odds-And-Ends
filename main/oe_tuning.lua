@@ -25,7 +25,7 @@ TUNING.OE_DEBUFFS =
     {
         STACK = 1,
         SLOW = 0.7, -- 30%
-        DAMAGE = 0.8, -- 20%
+        DAMAGE = 0.7,
         DURATION = 20,
     },
 }
@@ -62,19 +62,24 @@ TUNING.OE_FROZEN_TOOL =
     REFRESH_AMOUNT = 0.05,
     EFFECTIVENESS = 2.5, -- Same as Moon Glass Axe.
     CONSUMPTION = 1.25 / 100,
-    DEFAULT_DAMAGE = 27.2,
+    DAMAGE =
+    {
+        DEFAULT = 27.2,
+        HAMMER = 34,
+        SHOVEL = 17,
+    }
 }
-
-TUNING.OE_FROZEN_TOOL_SHOVEL_DAMAGE = 17
-TUNING.OE_FROZEN_TOOL_HAMMER_DAMAGE = 34
 
 TUNING.OE_FROZEN_SWORD =
 {
     USES = 100,
     HEAT = -10,
-    DAMAGE = 51,
-    DAMAGE_WINTER = 75,
     COOLDOWN = 5,
+    DAMAGE =
+    {
+        NORMAL = 55,
+        WINTER = 75,
+    },
 }
 
 TUNING.OE_TRUE_ICE =
@@ -82,5 +87,49 @@ TUNING.OE_TRUE_ICE =
     HEALTH = 0.5,
     HUNGER = 2.3,
     SANITY = 0,
-    REPAIR_AMOUNT = 50,
+    REPAIR_AMOUNT =
+    {
+        FINITEUSES = 50,
+        PERISH = 0.25,
+    },
+}
+
+TUNING.OE_POWDER_WEAPON =
+{
+    RANGE =
+    {
+        MIN = 10,
+        MAX = 20,
+    },
+}
+
+TUNING.OE_POWDER_WEAPON_AMMO =
+{
+    HUNGER = 5,
+    SPEED = 50,
+    RANGE = 50,
+    DIST = 1.5,
+    COOLDOWN = 5,
+    TIMEOUT = 20,
+
+    DAMAGE =
+    {
+        GUNPOWDER = 300,
+        INFINITE = 100,
+    },
+
+    CRIT =
+    {
+        GUNPOWDER = 
+        {
+            CHANCE = 0.30,
+            MODIFIER = 1.5,
+        },
+        
+        INFINITE =
+        {
+            CHANCE = 0.10,
+            MODIFIER = 1,
+        },
+    },
 }

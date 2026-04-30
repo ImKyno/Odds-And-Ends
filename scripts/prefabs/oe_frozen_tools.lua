@@ -21,6 +21,9 @@ local function MakeFrozenTool(data)
         Asset("IMAGE", "images/oe_inventoryimages.tex"),
         Asset("ATLAS", "images/oe_inventoryimages.xml"),
         Asset("ATLAS_BUILD", "images/oe_inventoryimages.xml", 256),
+
+        Asset("SOUNDPACKAGE", "sound/oe_sounds.fev"),
+        Asset("SOUND", "sound/oe_sfx.fsb"),
     }
 
     local function OnWorking(inst, owner, data)
@@ -138,7 +141,7 @@ local function MakeFrozenTool(data)
         end
 
         if target.SoundEmitter ~= nil then
-            target.SoundEmitter:PlaySound("dontstarve/winter/freeze_2nd")
+            target.SoundEmitter:PlaySound("oe_sounds/common/debuffs/frozen/start")
         end
 
         fx:SetFXLevel(numstacks or 1)
@@ -172,6 +175,8 @@ local function MakeFrozenTool(data)
 
     local function OnAttack(inst, owner, target)
         if target ~= nil and target.components.combat ~= nil then
+            inst.SoundEmitter:PlaySound("dontstarve/characters/walter/slingshot/freeze")
+
             local data_slow = target._slow
             local shouldrefresh
 
@@ -232,6 +237,12 @@ local function MakeFrozenTool(data)
         end
     end
 
+    local function OnRepaired(inst, doer)
+        if doer ~= nil then
+            doer:PushEvent("repairtrueice")
+        end
+    end
+
     local function OnLoad(inst, data)
         OnUpdateSeason(inst, TheWorld.state.season)
     end
@@ -288,7 +299,7 @@ local function MakeFrozenTool(data)
         inst.components.heater.equippedheat = TUNING.OE_FROZEN_TOOL.HEAT
 
         inst:AddComponent("weapon")
-        inst.components.weapon:SetDamage(data.damage or TUNING.OE_FROZEN_TOOL.DEFAULT_DAMAGE)
+        inst.components.weapon:SetDamage(data.damage or TUNING.OE_FROZEN_TOOL.DAMAGE.DEFAULT)
         if data.debuffable ~= nil then
             inst.components.weapon.onattack = OnAttack
         end
@@ -301,6 +312,13 @@ local function MakeFrozenTool(data)
         inst.components.perishable:SetPerishTime(data.perishtime or TUNING.PERISH_FAST)
         inst.components.perishable:StartPerishing()
         inst.components.perishable:SetOnPerishFn(OnPerish)
+
+        if data.repairable ~= nil then
+            inst:AddComponent("repairable")
+            inst.components.repairable.repairmaterial = MATERIALS.OE_TRUE_ICE
+            inst.components.repairable.noannounce = true
+            inst.components.repairable.onrepaired = OnRepaired
+        end
 
         inst._OnWorking = function(owner, data)
             OnWorking(inst, owner, data)
@@ -354,7 +372,7 @@ local tools =
         sym_num     = 7,
         sym_build   = "swap_shovel",
         action      = ACTIONS.DIG,
-        damage      = TUNING.OE_FROZEN_TOOL_SHOVEL_DAMAGE,
+        damage      = TUNING.OE_FROZEN_TOOL.DAMAGE.SHOVEL,
     },
 
     -- Frozen Mallet
@@ -367,7 +385,7 @@ local tools =
         sym_num     = -13,
         sym_build   = "swap_oe_hammer",
         action      = ACTIONS.HAMMER,
-        damage      = TUNING.OE_FROZEN_TOOL_HAMMER_DAMAGE,
+        damage      = TUNING.OE_FROZEN_TOOL.DAMAGE.HAMMER,
         debuffable  = true,
     },
 }

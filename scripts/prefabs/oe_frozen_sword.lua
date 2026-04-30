@@ -1,7 +1,7 @@
 local assets =
 {
-    Asset("ANIM", "anim/nightmaresword.zip"),
-    Asset("ANIM", "anim/swap_nightmaresword.zip"),
+    Asset("ANIM", "anim/oe_frozen_sword.zip"),
+    Asset("ANIM", "anim/oe_swap_frozen_sword.zip"),
 
     Asset("IMAGE", "images/oe_inventoryimages.tex"),
     Asset("ATLAS", "images/oe_inventoryimages.xml"),
@@ -20,9 +20,9 @@ local function OnEquip(inst, owner)
 
         if skin_build ~= nil then
             owner:PushEvent("equipskinneditem", inst:GetSkinName())
-            owner.AnimState:OverrideItemSkinSymbol("swap_object", skin_build, "swap_nightmaresword", inst.GUID, "swap_nightmaresword")
+            owner.AnimState:OverrideItemSkinSymbol("swap_object", skin_build, "oe_swap_frozen_sword", inst.GUID, "oe_swap_frozen_sword")
         else
-            owner.AnimState:OverrideSymbol("swap_object", "swap_nightmaresword", "swap_nightmaresword")
+            owner.AnimState:OverrideSymbol("swap_object", "oe_swap_frozen_sword", "oe_swap_frozen_sword")
         end
 
         owner.AnimState:Show("ARM_carry")
@@ -52,21 +52,30 @@ local function OnUnequip(inst, owner)
 end
 
 local function OnAttack(inst, owner, target)
-    if target ~= nil and target:IsValid() and target.components.freezable ~= nil then
-        if inst.components.rechargeable ~= nil then
-            if inst.components.rechargeable:IsCharged() then
-                target.components.freezable:Freeze()
-                target.components.freezable:SpawnShatterFX()
+    if target ~= nil and target:IsValid() then
+        inst.SoundEmitter:PlaySound("dontstarve/characters/walter/slingshot/freeze")
 
-                inst.components.rechargeable:Discharge(inst._cooldown)
+        if target.components.freezable ~= nil and inst.components.rechargeable ~= nil 
+        and inst.components.rechargeable:IsCharged() then
+            target.components.freezable:Freeze()
+            target.components.freezable:SpawnShatterFX()
+
+            if target.components.burnable ~= nil then
+                if target.components.burnable:IsBurning() then
+                    target.components.burnable:Extinguish()
+                elseif target.components.burnable:IsSmoldering() then
+                    target.components.burnable:SmotherSmolder()
+                end
             end
+
+            inst.components.rechargeable:Discharge(inst._cooldown)
         end
     end
 end
 
 local function OnGetDamage(inst)
     local season = TheWorld.state.season
-    return season == "winter" and TUNING.OE_FROZEN_SWORD.DAMAGE_WINTER or TUNING.OE_FROZEN_SWORD.DAMAGE
+    return season == "winter" and TUNING.OE_FROZEN_SWORD.DAMAGE.WINTER or TUNING.OE_FROZEN_SWORD.DAMAGE.NORMAL
 end
 
 local function OnRepaired(inst, doer)
@@ -84,12 +93,10 @@ local function fn()
     inst.entity:AddNetwork()
 
     MakeInventoryPhysics(inst)
+    MakeInventoryFloatable(inst, "med", 0.05, { 1.1, 0.5, 1.1 }, true, -9)
 
-    local swap_data = { sym_build = "swap_nightmaresword", bank = "nightmaresword" }
-    MakeInventoryFloatable(inst, "med", 0.05, { 1.0, 0.4, 1.0 }, true, -17.5, swap_data)
-
-    inst.AnimState:SetBank("nightmaresword")
-    inst.AnimState:SetBuild("nightmaresword")
+    inst.AnimState:SetBank("oe_frozen_sword")
+    inst.AnimState:SetBuild("oe_frozen_sword")
     inst.AnimState:PlayAnimation("idle")
 
     inst:AddTag("sharp")
@@ -107,7 +114,6 @@ local function fn()
 
     inst:AddComponent("inspectable")
     inst:AddComponent("inventoryitem")
-    inst.components.inventoryitem:ChangeImageName("mole")
 
     inst:AddComponent("weapon")
     inst.components.weapon:SetDamage(OnGetDamage)

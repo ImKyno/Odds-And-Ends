@@ -1,6 +1,6 @@
 local _G              = GLOBAL
 local require         = _G.require
-local AccessoriesUtil = require("oe_accessories_util")
+local AccessoriesUtil = require("oe_util_accessories")
 
 -- Island Adventures Mod Support for the Gnawed Wooden Totem accessory.
 if TUNING.OE_ISLAND_ADVENTURES_ENABLED and TUNING.OE_ISLAND_ADVENTURES_CORE_ENABLED then

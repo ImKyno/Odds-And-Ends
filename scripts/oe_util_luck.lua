@@ -76,5 +76,5 @@ end
 
 OeLuckFormulas =
 {
-
+    CriticalChance = CommonChanceLuckAdditive(0.5),
 }

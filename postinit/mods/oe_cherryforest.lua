@@ -1,6 +1,6 @@
 local _G              = GLOBAL
 local require         = _G.require
-local AccessoriesUtil = require("oe_accessories_util")
+local AccessoriesUtil = require("oe_util_accessories")
 
 -- Cherry Forest Mod Support for the Gnawed Wooden Totem accessory.
 if TUNING.OE_CHERRY_FOREST_ENABLED then

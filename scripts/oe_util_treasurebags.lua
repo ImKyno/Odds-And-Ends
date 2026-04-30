@@ -25,7 +25,6 @@ TreasureBagsUtil.LootKey =
             { prefab = "oe_frozen_tool_hammer", chance = 0.65                   },
          -- { prefab = "oe_trinket_snowman",    chance = 0.33                   },
          -- { prefab = "oe_trinket_snowglobe",  chance = 0.33                   },
-         -- { prefab = "oe_heatrock_cold",      chance = 0.05                   },
         },
     },
 }

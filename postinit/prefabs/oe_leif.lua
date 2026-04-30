@@ -1,6 +1,6 @@
 local _G              = GLOBAL
 local require         = _G.require
-local AccessoriesUtil = require("oe_accessories_util")
+local AccessoriesUtil = require("oe_util_accessories")
 
 local function LeifPostInit(inst)
     local function OnDeathWoodTotem(inst, data)

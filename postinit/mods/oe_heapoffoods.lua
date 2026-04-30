@@ -1,6 +1,6 @@
 local _G              = GLOBAL
 local require         = _G.require
-local AccessoriesUtil = require("oe_accessories_util")
+local AccessoriesUtil = require("oe_util_accessories")
 
 -- Heap of Foods Mod Support for the Gnawed Wooden Totem accessory.
 if TUNING.OE_HEAP_OF_FOODS_ENABLED then

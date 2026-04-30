@@ -1,4 +1,4 @@
-local TREASUREBAGS_UTIL = require("oe_treasurebags_util")
+local TreasureBagsUtil = require("oe_util_treasurebags")
 
 local function MakeTreasureBag(data)
     local assets =
@@ -12,7 +12,9 @@ local function MakeTreasureBag(data)
 
     local function OnUnwrapped(inst, pos, doer)
         if doer ~= nil then
-            doer.SoundEmitter:PlaySound("dontstarve/common/together/packaged")
+            if doer.SoundEmitter ~= nil then
+                doer.SoundEmitter:PlaySound("dontstarve/common/together/packaged")
+            end
 
             if inst.components.treasurebag ~= nil then
                 inst.components.treasurebag:Open(doer)
@@ -72,7 +74,7 @@ local function MakeTreasureBag(data)
     return Prefab("oe_treasurebag_"..data.name, fn, assets)
 end
 
-local giants =
+local bosses =
 {
     "deerclops",
     -- "moose",
@@ -82,7 +84,7 @@ local giants =
 
 local treasurebags = {}
 
-for _, v in ipairs(giants) do
+for _, v in ipairs(bosses) do
     table.insert(treasurebags,
     {
         name = v,

@@ -1,4 +1,4 @@
-local TREASUREBAGS_UTIL = require("oe_treasurebags_util")
+local TreasureBagsUtil = require("oe_util_treasurebags")
 
 local TreasureBag = Class(function(self, inst)
     self.inst = inst
@@ -86,7 +86,7 @@ function TreasureBag:Open(doer)
         return
     end
 
-    local def = TREASUREBAGS_UTIL.LootKey[self.loot_key]
+    local def = TreasureBagsUtil.LootKey[self.loot_key]
 
     if def == nil then
         print("Odds and Ends Mod - TreasureBag: Missing loot for", self.loot_key)

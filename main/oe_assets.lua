@@ -14,7 +14,8 @@ Assets =
 
 local OE_ICONS =
 {
-    "oe_treasurebag_deerclops"
+    "oe_treasurebag_deerclops",
+    "oe_frozen_sword",
 }
 
 for k, v in pairs(OE_ICONS) do

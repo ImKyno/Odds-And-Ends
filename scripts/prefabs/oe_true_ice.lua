@@ -96,7 +96,8 @@ local function fn()
 
     inst:AddComponent("repairer")
     inst.components.repairer.repairmaterial = MATERIALS.OE_TRUE_ICE
-    inst.components.repairer.finiteusesrepairvalue = TUNING.OE_TRUE_ICE.REPAIR_AMOUNT
+    inst.components.repairer.finiteusesrepairvalue = TUNING.OE_TRUE_ICE.REPAIR_AMOUNT.FINITEUSES
+    inst.components.repairer.perishrepairpercent = TUNING.OE_TRUE_ICE.REPAIR_AMOUNT.PERISH
 
     --[[
     inst:AddComponent("edible")

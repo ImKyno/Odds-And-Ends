@@ -12,6 +12,17 @@
         |
         New type of material for repairing items.
 
+    [ Assorted Weapons ]
+    * Weapon with "Damage increases as health decreases"
+    * Weapon with "Damage increases as sanity decreases"
+    * Moonsplitter
+        |
+        Damage is based on the moon phase and bonus effects when Lunar Rift is active.
+        
+    * Strangler's Heart Dagger
+        |
+        Part of a Set Bonus, damage increases for each target around the wielder.
+
     [ Treasure Bags ]
     * Add Treasure Bags System - [DONE]
     * Add Treasure Bag for each Boss.
@@ -33,8 +44,7 @@
         does not spoil during Winter, spoils faster during other seasons, specially Summer.
         Can be stored inside Ice Box to stop spoil time and decreases the temperature when yield. - [DONE]
 
-        * Chilled Stone: Infinite Thermal Stone that is always cold.
-        Melts in summer if left on ground.
+        * Chilled Stone: Infinite Thermal Stone that is always cold. -- Thinking of moving this to Frostjaw...
 
         * Frostbane (Weapon): Sword that can instantly freeze targets, has cooldown between uses.
         Deals more damage during the Winter and decreases the temperature when yield. - [DONE]
@@ -50,7 +60,7 @@
 
         * Rain Totem: Summons rain. Drains sanity and is consumed when used.
 
-        * Bottled Sparks (Weapon): Throwable weapon that deals electric damage and stuns targets.
+        * Bottled Maelstrom (Weapon): Throwable weapon that deals electric damage and stuns targets.
 
         * Goose Waders (Accessory): Increased movement speed when it's raining or if wetness is high enough. [DONE]
 
@@ -73,24 +83,40 @@
     * Dragonfly
         |
         * Molten Blade (Weapon): Ignites targets and increases the temperature when yield.
-        Chance to self ignite when attacking.
+        Chance to self ignite when attacking. Increased damage against targets that are burning.
 
-        * Magma Fire Pit (Deployable Kit): Just like Obsidian Fire Pit from Shipwrecked.
+        * Magma Fire Pit (Blueprint): Just like Obsidian Fire Pit from Shipwrecked.
         Huge Light radius and hot temperature.
 
-        * Magma Stone: Infinite Thermal Stone that is always hot.
-        Freezes in winter if left on ground.
-
-        * Ashen Ring (Accessory): Damage and ignites targets when attacked, has cooldown.
+        * Molten Ring (Accessory): Damage and ignites targets when attacked, has cooldown.
         Drains sanity when activated.
 
-        * Scorched Skull (Accessory): Grants immunity to fire damage.
+        * Molten Skull (Accessory): Grants immunity to fire damage.
 
         Enraged Loot:
             |
-            * Magma Charm (Accessory): Grants immunity to overheat.
+            * Molten Charm (Accessory): Grants immunity to overheat.
+
+            * Magma Stone: Infinite Thermal Stone that is always hot.
 
         * Trinkets: Mosquito Spray, Mini Volcano, Lava Lamp, Burnt Toast, ...
+
+    * Klaus
+        |
+        * Blizzard Staff (Weapon): Better Ice staff with Ice AOE attack.
+
+        * Eruption Staff (Weapon): Better Fire staff with Fire AOE attack.
+
+        * ??? (Accessory): Increases naughtiness by 2 points when killing any creature.
+
+        * Bewitching Compass: Tracks and makes the Loot Stash visible over the fog on the minimap.
+
+        * Trinkets: Keyring, ...
+
+        Enraged Loot:
+            |
+            * Mini Loot Stash (Portable Storage): 4 slots container with infinite stacking
+            that works similar to Polar Bearger Bin.
 
     [ Accessories ]
     * Make Accessory System
@@ -113,7 +139,7 @@
     
     * When trying to combine accessories, if the combination fails it will simply return the items back.
 
-    [ Trinket Machine ]
+    [ Trinket Vending Machine ]
     * Add Recipe (costs nothing).
     * Make Trinket Ball that players can open and receive a random trinket.
     * Make Trinket Ball Loot system based on weighted chances. (COMMON, UNCOMMON, RARE, ULTRA RARE, LEGENDARY).
@@ -121,5 +147,44 @@
 
     [ Sewing Machine ]
     * Structure that acts like a Sewing Kit with more uses and repairs 100% of the item.
+
+    [ Critical Strikes ]
+    * Add a Crit system.
+    * Critical Strikes deals +50% bonus damage.
+    * Player starts with 0% Critical Strike Chance. It can be further boosted by items and accessories alike.
+    * Some weapons and accessories can override the player's critical strike chance/damage.
+
+    [ Powder Weapon ]
+    * A ranged weapon that shoots projectiles of various type. We gonna start with Gunpowder only.
+    * Acts like a slingshot with higher damage but has cooldown between shots (Just like real life muzzleloaders).
+    * Damage and effects are determined by the projectile used.
+    * The projectiles can Critical Strike for even more damage.
+
+    [ Cursed Blades ]
+    * Masa
+        |
+        A sword that grants +5% Critical Strike Chance. Critical Strikes deals bonus damage.
+        It has Shadow Allegiance and deals bonus damage against Lunar Aligned creatures.
+        It also drains -5 Health every 30 seconds of the wielder if it's Lunar Aligned.
+
+    * Mune
+        |
+        A sword that grants +5% Critical Strike Chance. Critical Strikes deals bonus damage.
+        It has Lunar Allegiance and deals bonus damage against Shadow Aligned creatures.
+        It also drains -5 Health every 30 seconds of the wielder if it's Shadow Aligned.
+
+    * Masamune
+        |
+        A sword that has a penalty of -99% Critical Strike Chance.
+        Critical Strikes no longer deals bonus damage, it executes target instead. (Non-bosses).
+        It has no Allegiance and deals bonus damage against Lunar and Shadow Aligned creatures.
+        It Heals +10 Health every 60 seconds of the wielder if no Allegiance.
+        Crafted by combining Masa and Mune.
+
+    * Bloodthirster
+        |
+        A sword that grants +5% Critical Strike Chance and constantly drains the Health of the wielder.
+        Killing targets restores Health, Critical Strikes also restores a bigger portion of health.
+        Damage increases as you kill more targets, for a max of 5 stacks. Effects last for 30 seconds, resets on kill. 
 
 --]]-----------------------------------------------------------------------------------------------------------------------------
