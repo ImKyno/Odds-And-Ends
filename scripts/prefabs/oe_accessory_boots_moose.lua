@@ -1,7 +1,7 @@
 local assets =
 {
     -- Asset("ANIM", "anim/oe_accessory_boots_moose.zip"),
-    Asset("ANIM", "anim/torso_dragonfly.zip"),
+    Asset("ANIM", "anim/oe_accessories.zip"), -- Teehee!@@@@@
 
     Asset("IMAGE", "images/oe_inventoryimages.tex"),
     Asset("ATLAS", "images/oe_inventoryimages.xml"),
@@ -72,9 +72,9 @@ local function fn()
     MakeInventoryPhysics(inst)
     MakeInventoryFloatable(inst)
 
-    inst.AnimState:SetBank("torso_dragonfly")
-    inst.AnimState:SetBuild("torso_dragonfly")
-    inst.AnimState:PlayAnimation("anim")
+    inst.AnimState:SetBank("oe_accessories")
+    inst.AnimState:SetBuild("oe_accessories")
+    inst.AnimState:PlayAnimation("moose_goose_waders")
 
     inst:AddTag("oe_accessory")
 
