@@ -7,17 +7,23 @@ local assets =
     Asset("ATLAS_BUILD", "images/oe_inventoryimages.xml", 256),
 }
 
-local MODIFIER = TUNING.OE_ACCESSORIES.BURNT_SKULL.MODIFIER
-
 local function OnEquip(inst, owner)
-    if owner ~= nil and owner.components.health ~= nil then
-        owner.components.health.externalfiredamagemultipliers:SetModifier(inst, 1 - MODIFIER)
+    if owner ~= nil then
+        inst:AddTag("luckysource")
+
+        if owner.components.luckuser ~= nil then
+            owner.components.luckuser:SetLuckSource(TUNING.OE_ACCESSORIES.LUCK_CLOVER.MODIFIER, inst)
+        end
     end
 end
 
 local function OnUnequip(inst, owner)
-    if owner ~= nil and owner.components.health ~= nil then
-        owner.components.health.externalfiredamagemultipliers:RemoveModifier(inst)
+    if owner ~= nil then
+        inst:RemoveTag("luckysource")
+
+        if owner.components.luckuser ~= nil then
+            owner.components.luckuser:RemoveLuckSource(inst)
+        end
     end
 end
 
@@ -36,12 +42,12 @@ local function fn()
     inst.AnimState:SetBuild("oe_accessories")
     inst.AnimState:PlayAnimation("idle")
 
-    inst.AnimState:OverrideSymbol("accessory", "oe_accessories", "burnt_skull")
+    inst.AnimState:OverrideSymbol("accessory", "oe_accessories", "luck_clover")
 
     inst:AddTag("oe_accessory")
     inst:AddTag("furnituredecor")
 
-    inst.pickupsound = "rock"
+    inst.pickupsound = "vegetation_grassy"
 
     inst.entity:SetPristine()
 
@@ -55,7 +61,7 @@ local function fn()
 
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.OE_ACCESSORY
-    inst.components.equippable.dapperness = -TUNING.DAPPERNESS_TINY
+    inst.components.equippable.dapperness = TUNING.DAPPERNESS_TINY
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
 
@@ -64,4 +70,4 @@ local function fn()
     return inst
 end
 
-return Prefab("oe_accessory_burnt_skull", fn, assets)
+return Prefab("oe_accessory_luck_clover", fn, assets)

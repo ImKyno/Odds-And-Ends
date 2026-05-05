@@ -19,6 +19,9 @@ TUNING.OE_RESOURCES = 0.06
 TUNING.OE_DEFAULT_FLOATER = { "med", nil, 0.65 }
 TUNING.OE_EQUIPSLOTS_RESCALE = 0.06
 
+-- These are for stuff that are considered too annoying for some players.
+TUNING.OE_ANNOYING_BOOTS_MOOSE_SOUND = true -- GetModConfigData("ANNOYING_BOOTS_MOOSE_SOUND")
+
 TUNING.OE_DEBUFFS =
 {
     FROZEN =
@@ -32,6 +35,11 @@ TUNING.OE_DEBUFFS =
 
 TUNING.OE_ACCESSORIES =
 {
+    BLOOD_CLAW =
+    {
+        HEAL_AMOUNT = 2,
+    },
+
     BOOTS_MOOSE =
     {
         MOISTURE_THRESHOLD = 50,
@@ -41,6 +49,17 @@ TUNING.OE_ACCESSORIES =
     BURNT_SKULL =
     {
         MODIFIER = 1,
+    },
+
+    LUCK_CLOVER =
+    {
+        MODIFIER = 5.0,
+    },
+
+    LUCK_DICE =
+    {
+        MIN = 0.01,
+        MAX = 10.0,
     },
 
     -- Unused.
@@ -120,12 +139,12 @@ TUNING.OE_POWDER_WEAPON_AMMO =
 
     CRIT =
     {
-        GUNPOWDER = 
+        GUNPOWDER =
         {
             CHANCE = 0.30,
             MODIFIER = 1.5,
         },
-        
+
         INFINITE =
         {
             CHANCE = 0.10,

@@ -7,17 +7,25 @@ local assets =
     Asset("ATLAS_BUILD", "images/oe_inventoryimages.xml", 256),
 }
 
-local MODIFIER = TUNING.OE_ACCESSORIES.BURNT_SKULL.MODIFIER
+local function OnKilled(owner, data)
+    local victim = data ~= nil and data.victim or nil
+
+    if victim ~= nil and not victim:HasAnyTag(NON_LIFEFORM_TARGET_TAGS) or victim:HasTag("lifedrainable") then
+        if owner ~= nil and owner.components.health ~= nil then
+            owner.components.health:DoDelta(TUNING.OE_ACCESSORIES.BLOOD_CLAW.HEAL_AMOUNT, nil, "oe_accessories_blood_claw")
+        end
+    end
+end
 
 local function OnEquip(inst, owner)
-    if owner ~= nil and owner.components.health ~= nil then
-        owner.components.health.externalfiredamagemultipliers:SetModifier(inst, 1 - MODIFIER)
+    if owner ~= nil then
+        inst:ListenForEvent("killed", OnKilled, owner)
     end
 end
 
 local function OnUnequip(inst, owner)
-    if owner ~= nil and owner.components.health ~= nil then
-        owner.components.health.externalfiredamagemultipliers:RemoveModifier(inst)
+    if owner ~= nil then
+        inst:RemoveEventCallback("killed", OnKilled, owner)
     end
 end
 
@@ -36,7 +44,7 @@ local function fn()
     inst.AnimState:SetBuild("oe_accessories")
     inst.AnimState:PlayAnimation("idle")
 
-    inst.AnimState:OverrideSymbol("accessory", "oe_accessories", "burnt_skull")
+    inst.AnimState:OverrideSymbol("accessory", "oe_accessories", "blood_claw")
 
     inst:AddTag("oe_accessory")
     inst:AddTag("furnituredecor")
@@ -64,4 +72,4 @@ local function fn()
     return inst
 end
 
-return Prefab("oe_accessory_burnt_skull", fn, assets)
+return Prefab("oe_accessory_blood_claw", fn, assets)

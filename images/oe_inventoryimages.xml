@@ -1,7 +1,12 @@
 <Atlas>
     <Texture filename="oe_inventoryimages.tex" />
     <Elements>
-        <Element name="oe_frozen_sword.tex" u1="0.00390625" v1="0.0078125" u2="0.49609375" v2="0.9921875" />
-        <Element name="oe_treasurebag_deerclops.tex" u1="0.50390625" v1="0.0078125" u2="0.99609375" v2="0.9921875" />
+        <Element name="oe_accessory_blood_claw.tex" u1="0.001953125" v1="0.50390625" u2="0.248046875" v2="0.99609375" />
+        <Element name="oe_accessory_boots_moose.tex" u1="0.251953125" v1="0.50390625" u2="0.498046875" v2="0.99609375" />
+        <Element name="oe_accessory_burnt_skull.tex" u1="0.501953125" v1="0.50390625" u2="0.748046875" v2="0.99609375" />
+        <Element name="oe_accessory_luck_clover.tex" u1="0.751953125" v1="0.50390625" u2="0.998046875" v2="0.99609375" />
+        <Element name="oe_accessory_luck_dice.tex" u1="0.001953125" v1="0.00390625" u2="0.248046875" v2="0.49609375" />
+        <Element name="oe_frozen_sword.tex" u1="0.251953125" v1="0.00390625" u2="0.498046875" v2="0.49609375" />
+        <Element name="oe_treasurebag_deerclops.tex" u1="0.501953125" v1="0.00390625" u2="0.748046875" v2="0.49609375" />
     </Elements>
 </Atlas>

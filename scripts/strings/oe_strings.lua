@@ -1,10 +1,6 @@
 local NAMES       = STRINGS.NAMES
 local RECIPE_DESC = STRINGS.RECIPE_DESC
 
--- Treasure Bags.
-NAMES.OE_TREASUREBAG = "Treasure Bag"
-NAMES.OE_TREASUREBAG_DEERCLOPS = "Deerclops Treasure Bag"
-
 -- Tools, Weapons, etc.
 NAMES.OE_FROZEN_TOOL_AXE = "Chilled Axe"
 NAMES.OE_FROZEN_TOOL_PICKAXE = "Chilled Pickaxe"
@@ -16,6 +12,18 @@ NAMES.OE_FROZEN_SWORD = "Frostbane"
 NAMES.OE_TRUE_ICE = "True Ice" -- "Glacial Shard"
 NAMES.OE_HEATROCK_COLD = "Chilled Stone"
 NAMES.OE_HEATROCK_HEAT = "Magma Stone"
+
+-- Accessories.
+NAMES.OE_ACCESSORY_BOOTS_MOOSE = "Moose Waders"
+NAMES.OE_ACCESSORY_BOOTS_MOOSE_RANDOM = { "Moose Waders", "Goose Waders", "Moose Goose Waders" }
+NAMES.OE_ACCESSORY_BLOOD_CLAW = "Bloodied Gauntlet"
+NAMES.OE_ACCESSORY_BURNT_SKULL = "Molten Skull"
+NAMES.OE_ACCESSORY_LUCK_DICE = "Loaded Dice"
+NAMES.OE_ACCESSORY_LUCK_CLOVER = "Four-Leaf Clover"
+
+-- Treasure Bags.
+NAMES.OE_TREASUREBAG = "Treasure Bag"
+NAMES.OE_TREASUREBAG_DEERCLOPS = "Deerclops Treasure Bag"
 
 -- Trinkets.
 NAMES.OE_TRINKETS_SNOWMAN = "Tiny Snowman"

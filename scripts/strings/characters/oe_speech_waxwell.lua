@@ -1,8 +1,5 @@
 local WAXWELL = STRINGS.CHARACTERS.WAXWELL
 
--- Treasure Bags.
-WAXWELL.DESCRIBE.OE_TREASUREBAG = "At last, something of value."
-
 -- Tools, Weapons, etc.
 WAXWELL.DESCRIBE.OE_FROZEN_TOOL_AXE = "Crude, yet chilled."
 WAXWELL.DESCRIBE.OE_FROZEN_TOOL_PICKAXE = "Even tools succumb to frost."
@@ -12,3 +9,13 @@ WAXWELL.DESCRIBE.OE_FROZEN_SWORD = "At least it has some flair."
 
 -- Items.
 WAXWELL.DESCRIBE.OE_TRUE_ICE = "Refined and resilient."
+
+-- Accessories.
+WAXWELL.DESCRIBE.OE_ACCESSORY_BOOTS_MOOSE = "At least it has some dignity."
+WAXWELL.DESCRIBE.OE_ACCESSORY_BLOOD_CLAW = "Crude, but effective."
+WAXWELL.DESCRIBE.OE_ACCESSORY_BURNT_SKULL = "A cautionary tale."
+WAXWELL.DESCRIBE.OE_ACCESSORY_LUCK_DICE = "Luck favors the prepared mind."
+WAXWELL.DESCRIBE.OE_ACCESSORY_LUCK_CLOVER = "Superstition has its uses."
+
+-- Treasure Bags.
+WAXWELL.DESCRIBE.OE_TREASUREBAG = "At last, something of value."

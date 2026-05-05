@@ -20,20 +20,7 @@
 
 local oe_scrapbookdata =
 {
-    oe_treasurebag_deerclops =
-    {
-        name           = "deerclops", -- Using the giant's name for better organisation.
-        speechname     = "oe_treasurebag",
-        type           = "item",
-        subcat         = "treasurebag",
-        bank           = "oe_treasurebags",
-        build          = "oe_treasurebags",
-        anim           = "idle",
-        overridesymbol = { "swap_bag", "oe_treasurebags", "deerclops" },
-        deps           = { "deerclops" },
-        specialinfo    = "TREASUREBAG",
-    },
-
+    -- Tools, Weapons, etc.
     oe_frozen_tool_axe =
     {
         type           = "item",
@@ -45,7 +32,7 @@ local oe_scrapbookdata =
         build          = "axe",
         anim           = "idle",
         deps           = { "oe_treasurebag_deerclops" },
-        specialinfo    = "FROZENTOOL",
+        specialinfo    = "OE_FROZEN_TOOL",
     },
 
     oe_frozen_tool_pickaxe =
@@ -59,7 +46,7 @@ local oe_scrapbookdata =
         build          = "pickaxe",
         anim           = "idle",
         deps           = { "oe_treasurebag_deerclops" },
-        specialinfo    = "OE_FROZENTOOL",
+        specialinfo    = "OE_FROZEN_TOOL",
     },
 
     oe_frozen_tool_shovel =
@@ -73,7 +60,7 @@ local oe_scrapbookdata =
         build          = "shovel",
         anim           = "idle",
         deps           = { "oe_treasurebag_deerclops" },
-        specialinfo    = "OE_FROZENTOOL",
+        specialinfo    = "OE_FROZEN_TOOL",
     },
 
     oe_frozen_tool_hammer =
@@ -87,7 +74,7 @@ local oe_scrapbookdata =
         build          = "swap_oe_hammer",
         anim           = "idle",
         deps           = { "oe_treasurebag_deerclops" },
-        specialinfo    = "OE_FROZENHAMMER",
+        specialinfo    = "OE_FROZEN_HAMMER",
     },
 
     oe_frozen_sword =
@@ -103,7 +90,82 @@ local oe_scrapbookdata =
         animoffsetbgx  = -10,
         animoffsetbgy  = -60,
         deps           = { "oe_treasurebag_deerclops" },
-        specialinfo    = "OE_FROZENSWORD",
+        specialinfo    = "OE_FROZEN_SWORD",
+    },
+
+    -- Accessories.
+    oe_accessory_blood_claw =
+    {
+        type           = "item",
+        subcat         = "oe_accessory",
+        dapperness     = -TUNING.DAPPERNESS_TINY,
+        bank           = "oe_accessories",
+        build          = "oe_accessories",
+        anim           = "idle",
+        overridesymbol = { "accessory", "oe_accessories", "blood_claw" },
+        specialinfo    = "OE_ACCESSORY_BLOOD_CLAW",
+    },
+
+    oe_accessory_boots_moose =
+    {
+        type           = "item",
+        subcat         = "oe_accessory",
+        bank           = "oe_accessories",
+        build          = "oe_accessories",
+        anim           = "idle",
+        overridesymbol = { "accessory", "oe_accessories", "boots_moose" },
+     -- deps           = { "oe_treasurebag_moose" },
+        specialinfo    = "OE_ACCESSORY_BOOTS_MOOSE",
+    },
+
+    oe_accessory_burnt_skull =
+    {
+        type           = "item",
+        subcat         = "oe_accessory",
+        dapperness     = -TUNING.DAPPERNESS_TINY,
+        bank           = "oe_accessories",
+        build          = "oe_accessories",
+        anim           = "idle",
+        overridesymbol = { "accessory", "oe_accessories", "burnt_skull" },
+        specialinfo    = "OE_ACCESSORY_BURNT_SKULL",
+    },
+
+    oe_accessory_luck_clover =
+    {
+        type           = "item",
+        subcat         = "oe_accessory",
+        dapperness     = TUNING.DAPPERNESS_TINY,
+        bank           = "oe_accessories",
+        build          = "oe_accessories",
+        anim           = "idle",
+        overridesymbol = { "accessory", "oe_accessories", "luck_clover" },
+        specialinfo    = "OE_ACCESSORY_LUCK_CLOVER",
+    },
+
+    oe_accessory_luck_dice =
+    {
+        type           = "item",
+        subcat         = "oe_accessory",
+        bank           = "oe_accessories",
+        build          = "oe_accessories",
+        anim           = "idle",
+        overridesymbol = { "accessory", "oe_accessories", "luck_dice" },
+        specialinfo    = "OE_ACCESSORY_LUCK_DICE",
+    },
+
+    -- Treasure Bags.
+    oe_treasurebag_deerclops =
+    {
+        name           = "deerclops", -- Using the giant's name for better organisation.
+        speechname     = "oe_treasurebag",
+        type           = "item",
+        subcat         = "oe_treasurebag",
+        bank           = "oe_treasurebags",
+        build          = "oe_treasurebags",
+        anim           = "idle",
+        overridesymbol = { "swap_bag", "oe_treasurebags", "deerclops" },
+        deps           = { "deerclops" },
+        specialinfo    = "OE_TREASUREBAG",
     },
 }
 
