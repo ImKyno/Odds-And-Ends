@@ -25,16 +25,22 @@ local function fn()
 
     inst.entity:AddTransform()
     inst.entity:AddAnimState()
+    inst.entity:AddFollower()
     inst.entity:AddNetwork()
 
     MakeInventoryPhysics(inst)
     MakeInventoryFloatable(inst)
 
-    inst.AnimState:SetBank("torso_dragonfly")
-    inst.AnimState:SetBuild("torso_dragonfly")
-    inst.AnimState:PlayAnimation("anim")
+    inst.AnimState:SetBank("oe_accessories")
+    inst.AnimState:SetBuild("oe_accessories")
+    inst.AnimState:PlayAnimation("idle")
+
+    inst.AnimState:OverrideSymbol("accessory", "oe_accessories", "wood_totem")
 
     inst:AddTag("oe_accessory")
+    inst:AddTag("furnituredecor")
+
+    inst.pickupsound = "wood"
 
     inst.entity:SetPristine()
 
@@ -44,7 +50,7 @@ local function fn()
 
     inst:AddComponent("inspectable")
     inst:AddComponent("inventoryitem")
-    inst.components.inventoryitem:ChangeImageName("fishsticks")
+    inst:AddComponent("furnituredecor")
 
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.OE_ACCESSORY
@@ -57,20 +63,3 @@ local function fn()
 end
 
 return Prefab("oe_accessory_wood_totem", fn, assets)
-
--- Wood Totem logs by tree type and stage.
---[[
-* Evergreen (3 Stages) = 2 Logs, 4 Logs, 6 Logs
-* Evergreen Sparse (3 Stages) = 2 Logs, 4 Logs, 6 Logs
-* Deciduous Tree (3 Stages) = 2 Logs, 4 Logs, 6 Logs
-* Twiggy Tree (3 Stages) = 2 Logs, 4 Logs, 6 Logs
-* Totally Living Tree (2 Stages) = 2 Logs, 4 Logs
-* Spiky Tree (1 Stage) = 3 Logs
-* Lune Tree (3 Stages) = 4 Logs, 6 Logs, 8 Logs
-* Palmcone Tree (3 Stages) = 4 Logs, 6 Logs, 8 Logs
-* Driftwood (1 Stage) - 3 Driftwood Logs
-* Cave Banana Tree (1 Stage) = 3 Logs
-* Mushtree (1 Stage) = 3 Logs
-* Lunar Mushtree (1 Stage) = 3 Logs
-* Knobbly Tree (4 Stages) = 4 Logs, 6 Logs, 8 Logs, 16 Logs
-]]--

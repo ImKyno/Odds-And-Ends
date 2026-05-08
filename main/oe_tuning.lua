@@ -59,14 +59,12 @@ TUNING.OE_ACCESSORIES =
     LUCK_DICE =
     {
         MIN = 0.01,
-        MAX = 10.0,
+        MAX = 5.0,
     },
 
-    -- Unused.
-    WOOD_TOTEM =
+    LUCK_MASTER_DICE =
     {
-        LOG_AMOUNT = 6,
-        CHARCOAL_AMOUNT = 3,
+        MODIFIER = 10.0
     },
 }
 
@@ -86,7 +84,7 @@ TUNING.OE_FROZEN_TOOL =
         DEFAULT = 27.2,
         HAMMER = 34,
         SHOVEL = 17,
-    }
+    },
 }
 
 TUNING.OE_FROZEN_SWORD =

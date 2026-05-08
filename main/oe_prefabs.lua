@@ -15,6 +15,7 @@ PrefabFiles =
 
     "oe_frozen_sword",
     "oe_frozen_tools",
+    "oe_mini_klaus_sack",
     -- "oe_powder_weapon_ammo",
     -- "oe_powder_weapon"
     "oe_treasurebags",

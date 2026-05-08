@@ -16,7 +16,7 @@ end
 local function OnRollLuck(inst, owner)
     if owner ~= nil and owner.components.luckuser ~= nil then
         local min = math.floor(TUNING.OE_ACCESSORIES.LUCK_DICE.MIN or 0)
-        local max = math.floor(TUNING.OE_ACCESSORIES.LUCK_DICE.MAX or 10)
+        local max = math.floor(TUNING.OE_ACCESSORIES.LUCK_DICE.MAX or 5)
 
         local luck = math.random(min, max)
 
